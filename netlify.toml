@@ -1,21 +1,18 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  publish = "."
   functions = "functions"
 
 [build.environment]
   NODE_VERSION = "18"
-  NEXT_USE_NETLIFY_EDGE = "true"
-  NEXT_PRIVATE_TARGET = "server"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
+# SPA-style routing - serve index.html for non-existent routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
 
+# API routes to serverless functions
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
