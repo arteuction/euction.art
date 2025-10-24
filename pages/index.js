@@ -7,7 +7,19 @@ export default function Home() {
   useEffect(() => {
     fetch('/.netlify/functions/get-posts')
       .then(res => res.json())
-      .then(data => setPosts(data))
+      .then(data => {
+        // Ensure data is an array before setting state
+        if (Array.isArray(data)) {
+          setPosts(data)
+        } else {
+          console.error('Expected array from get-posts, got:', data)
+          setPosts([])
+        }
+      })
+      .catch(err => {
+        console.error('Error fetching posts:', err)
+        setPosts([])
+      })
   }, [])
 
   return (
