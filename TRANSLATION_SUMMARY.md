@@ -43,9 +43,9 @@
 
 ## Translation Coverage
 
-**Pages Fully Translated:** 5/8 main pages (62.5%)
+**Pages Fully Translated:** 7/8 main pages (87.5%)
 **Pages Partially Translated:** 0/8 main pages
-**Pages Remaining:** 3/8 main pages (37.5%)
+**Pages Remaining:** 1/8 main pages (12.5%)
 
 ## Remaining Work
 
@@ -93,9 +93,9 @@ All changes committed to: `claude/translate-to-bulgarian-011CURWQmhPXWKEKDNmaLqg
 
 ## Total Translation Statistics
 
-- **Lines of HTML translated:** ~1,500+ lines
-- **Pages touched:** 5 HTML files
-- **Git commits:** 10+
+- **Lines of HTML translated:** ~2,500+ lines
+- **Pages touched:** 7 HTML files (87.5% of main pages)
+- **Git commits:** 15+
 - **Consistent terminology established:** Yes
 - **All meta tags updated:** Yes
 - **Language attributes set:** Yes (lang="bg" on all pages)
