@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join ART EUction as an artist - Submit your work and support global causes through the UN SDGs">
+  <meta name="keywords" content="artist signup, art submission, NFT artist, social impact art, SDG artist">
+  <title>Artist Signup | ART EUction</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'><¨</text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="sdg/sdg-overview.html" class="nav-link">SDGs</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="partners.html" class="nav-link">Partners</a></li>
+          <li><a href="sia.html" class="nav-link">SIA</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="artist-signup.html" class="btn btn-secondary btn-sm">For Artists</a>
+          <a href="artwork-submission.html" class="btn btn-primary btn-sm">Submit Art</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 4rem 0;">
+      <div class="container">
+        <h1 class="hero-title">Join as an Artist</h1>
+        <p class="hero-subtitle">Share your vision and support global causes through your art</p>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Join ART EUction?</h2>
+          <p class="section-subtitle">Benefits of becoming a featured artist</p>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="card text-center">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">=°</div>
+            <h4>Fair Compensation</h4>
+            <p style="color: var(--gray-600);">Receive 20-25% of auction proceeds for your work</p>
+          </div>
+
+          <div class="card text-center">
+            <div style="font-size: 3rem; margin-bottom: 1rem;"><</div>
+            <h4>Global Exposure</h4>
+            <p style="color: var(--gray-600);">Reach international collectors passionate about impact</p>
+          </div>
+
+          <div class="card text-center">
+            <div style="font-size: 3rem; margin-bottom: 1rem;"><¯</div>
+            <h4>Meaningful Impact</h4>
+            <p style="color: var(--gray-600);">Support causes you care about through your art</p>
+          </div>
+
+          <div class="card text-center">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">Ó</div>
+            <h4>Blockchain Verified</h4>
+            <p style="color: var(--gray-600);">All sales authenticated and secured on blockchain</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup Form -->
+    <section class="section" style="background: rgba(255,255,255,0.5);">
+      <div class="container" style="max-width: 800px;">
+        <div class="card">
+          <div class="card-header">
+            <h2 style="margin-bottom: 0.5rem;">Artist Application</h2>
+            <p style="color: var(--gray-600); margin: 0;">Fill out the form below to join our community of impact-driven artists</p>
+          </div>
+
+          <form id="artist-signup-form" style="margin-top: 2rem;">
+            <!-- Personal Information -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Personal Information</h3>
+
+              <div class="form-group">
+                <label for="full-name" class="form-label">Full Name *</label>
+                <input type="text" id="full-name" name="full-name" class="form-control" required placeholder="Enter your full name">
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-control" required placeholder="your.email@example.com">
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 123-4567">
+              </div>
+
+              <div class="form-group">
+                <label for="location" class="form-label">Location (City, Country) *</label>
+                <input type="text" id="location" name="location" class="form-control" required placeholder="New York, USA">
+              </div>
+            </div>
+
+            <!-- Artist Information -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Artist Profile</h3>
+
+              <div class="form-group">
+                <label for="artist-name" class="form-label">Artist Name / Pseudonym *</label>
+                <input type="text" id="artist-name" name="artist-name" class="form-control" required placeholder="The name you use professionally">
+              </div>
+
+              <div class="form-group">
+                <label for="bio" class="form-label">Artist Bio *</label>
+                <textarea id="bio" name="bio" class="form-control" required placeholder="Tell us about yourself, your artistic journey, and what inspires your work (300-500 words)" style="min-height: 150px;"></textarea>
+                <p style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.5rem;">0 / 500 characters</p>
+              </div>
+
+              <div class="form-group">
+                <label for="portfolio-url" class="form-label">Portfolio URL *</label>
+                <input type="url" id="portfolio-url" name="portfolio-url" class="form-control" required placeholder="https://yourwebsite.com or https://instagram.com/yourname">
+              </div>
+
+              <div class="form-group">
+                <label for="art-medium" class="form-label">Primary Art Medium *</label>
+                <select id="art-medium" name="art-medium" class="form-control" required>
+                  <option value="">Select your primary medium</option>
+                  <option value="painting">Painting</option>
+                  <option value="sculpture">Sculpture</option>
+                  <option value="photography">Photography</option>
+                  <option value="digital">Digital Art</option>
+                  <option value="mixed-media">Mixed Media</option>
+                  <option value="installation">Installation</option>
+                  <option value="performance">Performance Art</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="experience" class="form-label">Years of Professional Experience *</label>
+                <select id="experience" name="experience" class="form-control" required>
+                  <option value="">Select experience level</option>
+                  <option value="0-2">0-2 years</option>
+                  <option value="3-5">3-5 years</option>
+                  <option value="6-10">6-10 years</option>
+                  <option value="10+">10+ years</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- SDG Selection -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">SDG Alignment</h3>
+
+              <div class="form-group">
+                <label class="form-label">Which UN Sustainable Development Goals resonate with you? (Select up to 3) *</label>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem; margin-top: 1rem;">
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="1" style="width: 18px; height: 18px;">
+                    <span>SDG 1: No Poverty</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="2" style="width: 18px; height: 18px;">
+                    <span>SDG 2: Zero Hunger</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="3" style="width: 18px; height: 18px;">
+                    <span>SDG 3: Good Health</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="4" style="width: 18px; height: 18px;">
+                    <span>SDG 4: Quality Education</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="5" style="width: 18px; height: 18px;">
+                    <span>SDG 5: Gender Equality</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="6" style="width: 18px; height: 18px;">
+                    <span>SDG 6: Clean Water</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="7" style="width: 18px; height: 18px;">
+                    <span>SDG 7: Clean Energy</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="8" style="width: 18px; height: 18px;">
+                    <span>SDG 8: Decent Work</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="9" style="width: 18px; height: 18px;">
+                    <span>SDG 9: Industry & Innovation</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="10" style="width: 18px; height: 18px;">
+                    <span>SDG 10: Reduced Inequalities</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="11" style="width: 18px; height: 18px;">
+                    <span>SDG 11: Sustainable Cities</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="12" style="width: 18px; height: 18px;">
+                    <span>SDG 12: Responsible Consumption</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="13" style="width: 18px; height: 18px;">
+                    <span>SDG 13: Climate Action</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="14" style="width: 18px; height: 18px;">
+                    <span>SDG 14: Life Below Water</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="15" style="width: 18px; height: 18px;">
+                    <span>SDG 15: Life on Land</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="16" style="width: 18px; height: 18px;">
+                    <span>SDG 16: Peace & Justice</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="sdg" value="17" style="width: 18px; height: 18px;">
+                    <span>SDG 17: Partnerships</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sdg-motivation" class="form-label">Why do these SDGs matter to you? *</label>
+                <textarea id="sdg-motivation" name="sdg-motivation" class="form-control" required placeholder="Share your personal connection to these causes and how your art reflects these values" style="min-height: 120px;"></textarea>
+              </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Additional Information</h3>
+
+              <div class="form-group">
+                <label for="social-media" class="form-label">Social Media Links</label>
+                <input type="text" id="social-media" name="social-media" class="form-control" placeholder="Instagram, Twitter, Facebook, etc. (comma separated)">
+              </div>
+
+              <div class="form-group">
+                <label for="hear-about" class="form-label">How did you hear about ART EUction?</label>
+                <select id="hear-about" name="hear-about" class="form-control">
+                  <option value="">Select an option</option>
+                  <option value="social-media">Social Media</option>
+                  <option value="artist-referral">Artist Referral</option>
+                  <option value="search-engine">Search Engine</option>
+                  <option value="event">Event or Exhibition</option>
+                  <option value="press">Press/Media</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="additional-notes" class="form-label">Additional Notes</label>
+                <textarea id="additional-notes" name="additional-notes" class="form-control" placeholder="Any other information you'd like to share with us" style="min-height: 100px;"></textarea>
+              </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="form-group">
+              <label style="display: flex; align-items: start; gap: 0.75rem; cursor: pointer;">
+                <input type="checkbox" name="terms" required style="width: 18px; height: 18px; margin-top: 0.25rem; flex-shrink: 0;">
+                <span style="color: var(--gray-700);">I agree to the <a href="#" style="color: var(--accent-cyan); text-decoration: underline;">Terms of Service</a> and <a href="#" style="color: var(--accent-cyan); text-decoration: underline;">Artist Guidelines</a>, and I confirm that I have the rights to all artwork I will submit. *</span>
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Application</button>
+              <p style="text-align: center; color: var(--gray-600); font-size: 0.875rem; margin-top: 1rem;">
+                We'll review your application and get back to you within 5-7 business days.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h4 style="margin-bottom: 0.75rem;">What are the selection criteria?</h4>
+            <p style="color: var(--gray-700); margin: 0;">We look for artists with strong portfolios, clear alignment with SDG values, and a commitment to social impact through their work.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-bottom: 0.75rem;">How much do artists earn?</h4>
+            <p style="color: var(--gray-700); margin: 0;">Artists receive 20-25% of auction proceeds. 75-80% goes directly to NGO partners supporting your chosen SDG.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-bottom: 0.75rem;">Can I submit physical or digital art?</h4>
+            <p style="color: var(--gray-700); margin: 0;">We accept both! Physical artworks are photographed for the platform, while digital works can be minted as NFTs.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-bottom: 0.75rem;">What happens after I apply?</h4>
+            <p style="color: var(--gray-700); margin: 0;">Our curation team reviews applications within 5-7 days. If accepted, you'll receive onboarding materials and can start submitting artworks.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <p style="color: var(--gray-600); margin-bottom: 1rem;">Have more questions?</p>
+          <a href="team.html" class="btn btn-outline">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About ART EUction</h4>
+          <p>A revolutionary platform combining art auctions with social impact, supporting the UN's 17 Sustainable Development Goals.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">How It Works</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sia.html">SIA Dashboard</a></li>
+            <li><a href="sdg/sdg-overview.html">SDG Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>For Artists</h4>
+          <ul class="footer-links">
+            <li><a href="artist-signup.html">Artist Signup</a></li>
+            <li><a href="artwork-submission.html">Submit Artwork</a></li>
+            <li><a href="#">Artist Guidelines</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="team.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. All rights reserved. | Art Meets Impact</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

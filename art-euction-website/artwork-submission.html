@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your artwork to ART EUction - Support UN SDGs through your creative expression">
+  <meta name="keywords" content="submit artwork, art auction submission, SDG art, social impact art">
+  <title>Submit Artwork | ART EUction</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'><¨</text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="sdg/sdg-overview.html" class="nav-link">SDGs</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="partners.html" class="nav-link">Partners</a></li>
+          <li><a href="sia.html" class="nav-link">SIA</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="artist-signup.html" class="btn btn-secondary btn-sm">For Artists</a>
+          <a href="artwork-submission.html" class="btn btn-primary btn-sm">Submit Art</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 4rem 0;">
+      <div class="container">
+        <h1 class="hero-title">Submit Your Artwork</h1>
+        <p class="hero-subtitle">Share your creative vision and support meaningful causes</p>
+      </div>
+    </section>
+
+    <!-- Guidelines -->
+    <section class="section">
+      <div class="container" style="max-width: 1000px;">
+        <div class="card" style="background: var(--primary-gradient); color: var(--gray-900); margin-bottom: 3rem;">
+          <h3 style="margin-bottom: 1.5rem;">Submission Guidelines</h3>
+          <div class="grid grid-3" style="gap: 2rem;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;"></div>
+              <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Quality Standards</h4>
+              <p style="margin: 0; font-size: 0.9375rem;">High-resolution images (minimum 2000px on longest side), professional presentation</p>
+            </div>
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;"><¯</div>
+              <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem;">SDG Alignment</h4>
+              <p style="margin: 0; font-size: 0.9375rem;">Clear connection to at least one UN Sustainable Development Goal</p>
+            </div>
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">©</div>
+              <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Original Work</h4>
+              <p style="margin: 0; font-size: 0.9375rem;">Must own full rights to the artwork and all elements within it</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submission Form -->
+    <section class="section" style="background: rgba(255,255,255,0.5); padding-top: 0;">
+      <div class="container" style="max-width: 900px;">
+        <div class="card">
+          <div class="card-header">
+            <h2 style="margin-bottom: 0.5rem;">Artwork Submission Form</h2>
+            <p style="color: var(--gray-600); margin: 0;">Please fill out all required fields to submit your artwork for consideration</p>
+          </div>
+
+          <form id="artwork-submission-form" style="margin-top: 2rem;">
+            <!-- Artist Information -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Artist Information</h3>
+
+              <div class="form-group">
+                <label for="artist-name" class="form-label">Artist Name *</label>
+                <input type="text" id="artist-name" name="artist-name" class="form-control" required placeholder="Your name or artist pseudonym">
+              </div>
+
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input type="email" id="email" name="email" class="form-control" required placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 123-4567">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="artist-bio" class="form-label">Brief Artist Bio</label>
+                <textarea id="artist-bio" name="artist-bio" class="form-control" placeholder="A short bio about you as an artist (optional, 100-200 words)" style="min-height: 100px;"></textarea>
+              </div>
+            </div>
+
+            <!-- Artwork Details -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Artwork Details</h3>
+
+              <div class="form-group">
+                <label for="artwork-title" class="form-label">Artwork Title *</label>
+                <input type="text" id="artwork-title" name="artwork-title" class="form-control" required placeholder="Enter the title of your artwork">
+              </div>
+
+              <div class="form-group">
+                <label for="description" class="form-label">Artwork Description *</label>
+                <textarea id="description" name="description" class="form-control" required placeholder="Describe your artwork, its meaning, and the story behind it (200-500 words)" style="min-height: 150px;"></textarea>
+                <p style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.5rem;">0 / 500 characters</p>
+              </div>
+
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label for="medium" class="form-label">Medium *</label>
+                  <select id="medium" name="medium" class="form-control" required>
+                    <option value="">Select artwork medium</option>
+                    <option value="oil-painting">Oil Painting</option>
+                    <option value="acrylic-painting">Acrylic Painting</option>
+                    <option value="watercolor">Watercolor</option>
+                    <option value="digital-art">Digital Art</option>
+                    <option value="photography">Photography</option>
+                    <option value="sculpture">Sculpture</option>
+                    <option value="mixed-media">Mixed Media</option>
+                    <option value="installation">Installation</option>
+                    <option value="printmaking">Printmaking</option>
+                    <option value="textile-art">Textile Art</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="year-created" class="form-label">Year Created *</label>
+                  <input type="number" id="year-created" name="year-created" class="form-control" required min="1900" max="2025" placeholder="2024">
+                </div>
+              </div>
+
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label for="dimensions" class="form-label">Dimensions</label>
+                  <input type="text" id="dimensions" name="dimensions" class="form-control" placeholder="e.g., 24 x 36 inches or N/A for digital">
+                </div>
+
+                <div class="form-group">
+                  <label for="edition" class="form-label">Edition Information</label>
+                  <input type="text" id="edition" name="edition" class="form-control" placeholder="e.g., 1/1, Limited Edition 5/50, or N/A">
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Upload -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Artwork Images</h3>
+
+              <div class="form-group">
+                <label for="main-image" class="form-label">Main Artwork Image *</label>
+                <div style="border: 2px dashed var(--gray-300); border-radius: 0.5rem; padding: 2rem; text-align: center; background: var(--gray-50);">
+                  <div style="font-size: 3rem; margin-bottom: 1rem;">=÷</div>
+                  <input type="file" id="main-image" name="main-image" accept="image/*" required style="margin-bottom: 1rem;">
+                  <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0;">High-resolution image (minimum 2000px, max 10MB)</p>
+                  <p style="color: var(--gray-500); font-size: 0.8125rem; margin-top: 0.5rem;">Accepted formats: JPG, PNG, TIFF</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="additional-images" class="form-label">Additional Images (Optional)</label>
+                <div style="border: 2px dashed var(--gray-300); border-radius: 0.5rem; padding: 2rem; text-align: center; background: var(--gray-50);">
+                  <div style="font-size: 2.5rem; margin-bottom: 1rem;">=¼</div>
+                  <input type="file" id="additional-images" name="additional-images" accept="image/*" multiple>
+                  <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0;">Upload up to 4 additional detail shots or angles</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SDG Selection -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">SDG Alignment</h3>
+
+              <div class="form-group">
+                <label for="primary-sdg" class="form-label">Primary SDG *</label>
+                <select id="primary-sdg" name="primary-sdg" class="form-control" required>
+                  <option value="">Select the primary SDG this artwork supports</option>
+                  <option value="1">SDG 1: No Poverty</option>
+                  <option value="2">SDG 2: Zero Hunger</option>
+                  <option value="3">SDG 3: Good Health and Well-being</option>
+                  <option value="4">SDG 4: Quality Education</option>
+                  <option value="5">SDG 5: Gender Equality</option>
+                  <option value="6">SDG 6: Clean Water and Sanitation</option>
+                  <option value="7">SDG 7: Affordable and Clean Energy</option>
+                  <option value="8">SDG 8: Decent Work and Economic Growth</option>
+                  <option value="9">SDG 9: Industry, Innovation and Infrastructure</option>
+                  <option value="10">SDG 10: Reduced Inequalities</option>
+                  <option value="11">SDG 11: Sustainable Cities and Communities</option>
+                  <option value="12">SDG 12: Responsible Consumption and Production</option>
+                  <option value="13">SDG 13: Climate Action</option>
+                  <option value="14">SDG 14: Life Below Water</option>
+                  <option value="15">SDG 15: Life on Land</option>
+                  <option value="16">SDG 16: Peace, Justice and Strong Institutions</option>
+                  <option value="17">SDG 17: Partnerships for the Goals</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sdg-connection" class="form-label">How does this artwork connect to the SDG? *</label>
+                <textarea id="sdg-connection" name="sdg-connection" class="form-control" required placeholder="Explain how your artwork addresses or represents this SDG. What message or impact are you hoping to create? (150-300 words)" style="min-height: 120px;"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Secondary SDGs (Optional)</label>
+                <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem;">Select any additional SDGs this artwork addresses</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.75rem;">
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="1" style="width: 18px; height: 18px;">
+                    <span>SDG 1: No Poverty</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="2" style="width: 18px; height: 18px;">
+                    <span>SDG 2: Zero Hunger</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="3" style="width: 18px; height: 18px;">
+                    <span>SDG 3: Good Health</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="4" style="width: 18px; height: 18px;">
+                    <span>SDG 4: Quality Education</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="5" style="width: 18px; height: 18px;">
+                    <span>SDG 5: Gender Equality</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="10" style="width: 18px; height: 18px;">
+                    <span>SDG 10: Reduced Inequalities</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="13" style="width: 18px; height: 18px;">
+                    <span>SDG 13: Climate Action</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="secondary-sdg" value="14" style="width: 18px; height: 18px;">
+                    <span>SDG 14: Life Below Water</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing & Auction Details -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Pricing & Auction Details</h3>
+
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label for="reserve-price" class="form-label">Reserve Price (USD) *</label>
+                  <input type="number" id="reserve-price" name="reserve-price" class="form-control" required min="100" step="100" placeholder="5000">
+                  <p style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.5rem;">Minimum price you're willing to accept</p>
+                </div>
+
+                <div class="form-group">
+                  <label for="starting-bid" class="form-label">Suggested Starting Bid (USD)</label>
+                  <input type="number" id="starting-bid" name="starting-bid" class="form-control" min="100" step="100" placeholder="3000">
+                  <p style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.5rem;">Recommended starting point for bidding</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="artwork-type" class="form-label">Artwork Type *</label>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="radio" name="artwork-type" value="physical" required>
+                    <span>Physical Artwork</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="radio" name="artwork-type" value="digital">
+                    <span>Digital Artwork (NFT)</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="radio" name="artwork-type" value="both">
+                    <span>Both (Physical + NFT)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="shipping-info" class="form-label">Shipping Information (for physical artworks)</label>
+                <textarea id="shipping-info" name="shipping-info" class="form-control" placeholder="Current location, special handling requirements, estimated shipping costs, etc." style="min-height: 80px;"></textarea>
+              </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Additional Information</h3>
+
+              <div class="form-group">
+                <label for="exhibition-history" class="form-label">Exhibition History</label>
+                <textarea id="exhibition-history" name="exhibition-history" class="form-control" placeholder="List any previous exhibitions, awards, or recognition this artwork has received" style="min-height: 100px;"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="certificate" class="form-label">Certificate of Authenticity</label>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="radio" name="certificate" value="yes">
+                    <span>Yes, I have a certificate</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="radio" name="certificate" value="will-provide">
+                    <span>Will provide upon sale</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="radio" name="certificate" value="no">
+                    <span>No certificate</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="additional-notes" class="form-label">Additional Notes</label>
+                <textarea id="additional-notes" name="additional-notes" class="form-control" placeholder="Any other information you'd like us to know about this artwork" style="min-height: 100px;"></textarea>
+              </div>
+            </div>
+
+            <!-- Rights & Permissions -->
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-200);">Rights & Permissions</h3>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: start; gap: 0.75rem; cursor: pointer;">
+                  <input type="checkbox" name="ownership" required style="width: 18px; height: 18px; margin-top: 0.25rem; flex-shrink: 0;">
+                  <span style="color: var(--gray-700);">I confirm that I am the original creator of this artwork and hold all rights to it. *</span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: start; gap: 0.75rem; cursor: pointer;">
+                  <input type="checkbox" name="licensing" required style="width: 18px; height: 18px; margin-top: 0.25rem; flex-shrink: 0;">
+                  <span style="color: var(--gray-700);">I grant ART EUction the right to display, promote, and auction this artwork on their platform. *</span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: start; gap: 0.75rem; cursor: pointer;">
+                  <input type="checkbox" name="terms" required style="width: 18px; height: 18px; margin-top: 0.25rem; flex-shrink: 0;">
+                  <span style="color: var(--gray-700);">I agree to the <a href="#" style="color: var(--accent-cyan); text-decoration: underline;">Terms of Service</a> and <a href="#" style="color: var(--accent-cyan); text-decoration: underline;">Commission Structure</a> (75-80% to NGOs, 20-25% to artist). *</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Artwork for Review</button>
+              <p style="text-align: center; color: var(--gray-600); font-size: 0.875rem; margin-top: 1rem;">
+                Our curation team will review your submission within 3-5 business days and contact you with next steps.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Happens Next -->
+    <section class="section">
+      <div class="container" style="max-width: 1000px;">
+        <div class="section-header">
+          <h2 class="section-title">What Happens Next?</h2>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="card text-center">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800;">1</div>
+            <h4>Review</h4>
+            <p style="color: var(--gray-600);">Our curation team reviews your submission for quality and SDG alignment</p>
+          </div>
+
+          <div class="card text-center">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800;">2</div>
+            <h4>Approval</h4>
+            <p style="color: var(--gray-600);">If approved, you'll receive confirmation and auction scheduling details</p>
+          </div>
+
+          <div class="card text-center">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800;">3</div>
+            <h4>Listing</h4>
+            <p style="color: var(--gray-600);">Your artwork is featured on our platform and promoted to collectors</p>
+          </div>
+
+          <div class="card text-center">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800;">4</div>
+            <h4>Impact</h4>
+            <p style="color: var(--gray-600);">Proceeds support NGOs working on your chosen SDG, creating real change</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <p style="color: var(--gray-600); margin-bottom: 1rem;">Not a registered artist yet?</p>
+          <a href="artist-signup.html" class="btn btn-secondary">Join as an Artist First</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About ART EUction</h4>
+          <p>A revolutionary platform combining art auctions with social impact, supporting the UN's 17 Sustainable Development Goals.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">How It Works</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sia.html">SIA Dashboard</a></li>
+            <li><a href="sdg/sdg-overview.html">SDG Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>For Artists</h4>
+          <ul class="footer-links">
+            <li><a href="artist-signup.html">Artist Signup</a></li>
+            <li><a href="artwork-submission.html">Submit Artwork</a></li>
+            <li><a href="#">Artist Guidelines</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="team.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. All rights reserved. | Art Meets Impact</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
