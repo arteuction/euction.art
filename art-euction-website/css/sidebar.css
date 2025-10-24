@@ -1,0 +1,323 @@
+/**
+ * ART EUction - SDG Sidebar Styles
+ */
+
+/* ==================== SIDEBAR CONTAINER ==================== */
+.sdg-sidebar {
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--glass-border);
+  z-index: var(--z-sidebar);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+  transition: transform var(--transition-base);
+}
+
+/* Custom scrollbar */
+.sdg-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sdg-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sdg-sidebar::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 3px;
+}
+
+.sdg-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* Adjust main content when sidebar is visible */
+.has-sidebar .page-content {
+  margin-left: var(--sidebar-width);
+  padding-left: 2rem;
+}
+
+/* ==================== SIDEBAR HEADER ==================== */
+.sidebar-header {
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sidebar-subtitle {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+/* ==================== SDG GRID ==================== */
+.sdg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ==================== SDG CARDS ==================== */
+.sdg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  background: var(--white);
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  transition: var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.sdg-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+.sdg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: currentColor;
+}
+
+.sdg-card.active {
+  border-color: currentColor;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-md);
+}
+
+.sdg-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  margin-bottom: 0.25rem;
+  color: currentColor;
+}
+
+.sdg-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-700);
+}
+
+/* Individual SDG Colors */
+.sdg-card[data-sdg="1"] { color: var(--sdg-1); }
+.sdg-card[data-sdg="2"] { color: var(--sdg-2); }
+.sdg-card[data-sdg="3"] { color: var(--sdg-3); }
+.sdg-card[data-sdg="4"] { color: var(--sdg-4); }
+.sdg-card[data-sdg="5"] { color: var(--sdg-5); }
+.sdg-card[data-sdg="6"] { color: var(--sdg-6); }
+.sdg-card[data-sdg="7"] { color: var(--sdg-7); }
+.sdg-card[data-sdg="8"] { color: var(--sdg-8); }
+.sdg-card[data-sdg="9"] { color: var(--sdg-9); }
+.sdg-card[data-sdg="10"] { color: var(--sdg-10); }
+.sdg-card[data-sdg="11"] { color: var(--sdg-11); }
+.sdg-card[data-sdg="12"] { color: var(--sdg-12); }
+.sdg-card[data-sdg="13"] { color: var(--sdg-13); }
+.sdg-card[data-sdg="14"] { color: var(--sdg-14); }
+.sdg-card[data-sdg="15"] { color: var(--sdg-15); }
+.sdg-card[data-sdg="16"] { color: var(--sdg-16); }
+.sdg-card[data-sdg="17"] { color: var(--sdg-17); }
+
+/* ==================== SIDEBAR FOOTER ==================== */
+.sidebar-footer {
+  padding: 1.5rem 0.5rem 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  color: var(--gray-700);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 0.5rem;
+  transition: var(--transition-base);
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-link:hover {
+  background: var(--gray-100);
+  color: var(--gray-900);
+  opacity: 1;
+}
+
+.sidebar-link svg,
+.sidebar-link .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ==================== MOBILE SIDEBAR ==================== */
+@media (max-width: 1024px) {
+  .sdg-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sdg-sidebar.active {
+    transform: translateX(0);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .has-sidebar .page-content {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  /* Sidebar Toggle Button */
+  .sidebar-toggle {
+    position: fixed;
+    left: 1rem;
+    bottom: 2rem;
+    width: 56px;
+    height: 56px;
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    transition: var(--transition-base);
+  }
+
+  .sidebar-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sidebar-toggle:active {
+    transform: scale(0.95);
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* ==================== SIDEBAR OVERLAY ==================== */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 899;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+@media (max-width: 1024px) {
+  .sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* ==================== COMPACT MODE ==================== */
+.sdg-sidebar.compact {
+  width: 80px;
+  padding: 1rem 0.5rem;
+}
+
+.sdg-sidebar.compact .sidebar-header,
+.sdg-sidebar.compact .sidebar-subtitle,
+.sdg-sidebar.compact .sdg-name {
+  display: none;
+}
+
+.sdg-sidebar.compact .sidebar-title {
+  font-size: 0.875rem;
+  text-align: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.sdg-sidebar.compact .sdg-grid {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.sdg-sidebar.compact .sdg-card {
+  padding: 0.75rem 0.25rem;
+}
+
+.sdg-sidebar.compact .sdg-number {
+  font-size: 1.25rem;
+}
+
+/* ==================== STATS WIDGET ==================== */
+.sidebar-stats {
+  background: var(--white);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1rem 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}

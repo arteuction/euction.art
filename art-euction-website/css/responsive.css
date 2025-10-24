@@ -1,0 +1,443 @@
+/**
+ * ART EUction - Responsive Styles
+ * Mobile-First Approach
+ */
+
+/* ==================== MOBILE FIRST (DEFAULT) ==================== */
+/* Base styles are mobile-optimized in styles.css */
+
+/* ==================== SMALL DEVICES (576px and up) ==================== */
+@media (min-width: 576px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    gap: 1.5rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero {
+    padding: 5rem 0;
+  }
+}
+
+/* ==================== MEDIUM DEVICES (768px and up) ==================== */
+@media (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 0 2.5rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .hero {
+    padding: 6rem 0;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hero sections */
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.375rem;
+  }
+
+  /* Navigation tweaks */
+  .nav-link {
+    font-size: 1rem;
+  }
+}
+
+/* ==================== LARGE DEVICES (1024px and up) ==================== */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .hero {
+    padding: 7rem 0;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Content wrapper with sidebar */
+  .content-wrapper {
+    display: flex;
+    gap: 2rem;
+  }
+
+  /* Sidebar visible */
+  .has-sidebar .main-content {
+    padding-left: var(--sidebar-width);
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==================== EXTRA LARGE DEVICES (1280px and up) ==================== */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 3rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+  }
+
+  .hero {
+    padding: 8rem 0;
+  }
+
+  .card {
+    padding: 2.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==================== 2XL DEVICES (1536px and up) ==================== */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* ==================== MOBILE-SPECIFIC OVERRIDES ==================== */
+@media (max-width: 767px) {
+  /* Typography adjustments */
+  h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Spacing */
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  /* Cards */
+  .card {
+    padding: 1.5rem;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* Grid adjustments */
+  .grid {
+    gap: 1rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Remove sidebar margin */
+  .has-sidebar .page-content {
+    margin-left: 0;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Form controls */
+  .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+}
+
+/* ==================== TABLET PORTRAIT (768px - 1023px) ==================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Specific adjustments for tablet portrait */
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .has-sidebar .page-content {
+    margin-left: 0;
+  }
+}
+
+/* ==================== LANDSCAPE ORIENTATION ==================== */
+@media (orientation: landscape) and (max-height: 600px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  :root {
+    --header-height: 60px;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .header,
+  .sdg-sidebar,
+  .sidebar-toggle,
+  .footer,
+  .btn,
+  .hamburger {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-top: 0;
+  }
+
+  .has-sidebar .page-content {
+    margin-left: 0;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.875rem;
+    color: #666;
+  }
+}
+
+/* ==================== ACCESSIBILITY & MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right {
+    animation: none !important;
+  }
+}
+
+/* ==================== HIGH CONTRAST MODE ==================== */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--gray-400);
+  }
+
+  .btn {
+    border: 2px solid currentColor;
+  }
+
+  .nav-link {
+    font-weight: 700;
+  }
+}
+
+/* ==================== DARK MODE SUPPORT ==================== */
+@media (prefers-color-scheme: dark) {
+  /* Optional: Add dark mode styles if needed in the future */
+  /* Currently using light theme as default */
+}
+
+/* ==================== TOUCH DEVICE OPTIMIZATIONS ==================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets for mobile */
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sdg-card {
+    min-height: 80px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .card:hover {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* ==================== SPECIFIC COMPONENT RESPONSIVE ADJUSTMENTS ==================== */
+
+/* SDG Grid on mobile */
+@media (max-width: 480px) {
+  .sdg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sdg-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .sdg-card .sdg-number {
+    font-size: 2rem;
+    margin-bottom: 0;
+    min-width: 50px;
+  }
+
+  .sdg-card .sdg-name {
+    font-size: 0.875rem;
+    text-align: left;
+  }
+}
+
+/* Team page grid */
+@media (max-width: 767px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Events timeline */
+@media (max-width: 767px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 2rem;
+  }
+}
+
+/* Partner logos */
+@media (max-width: 767px) {
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Form layouts */
+@media (max-width: 767px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row .form-group {
+    width: 100%;
+  }
+}
+
+/* Stats counters */
+@media (max-width: 767px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

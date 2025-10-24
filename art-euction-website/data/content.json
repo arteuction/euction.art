@@ -1,0 +1,151 @@
+{
+  "platform": {
+    "name": "ART EUction",
+    "tagline": "Art Meets Impact",
+    "description": "Where creativity drives social change through blockchain-powered auctions supporting the UN Sustainable Development Goals"
+  },
+  "hero": {
+    "title": "Art Meets Impact",
+    "subtitle": "Bid on extraordinary artworks and support global NGOs tackling the world's most pressing challenges through the UN Sustainable Development Goals.",
+    "cta": {
+      "primary": "Explore Artworks",
+      "secondary": "Learn More"
+    }
+  },
+  "about": {
+    "mission": "ART EUction bridges the gap between artistic expression and social impact, creating a transparent marketplace where every bid supports verified NGOs working towards the UN's 17 Sustainable Development Goals.",
+    "vision": "A world where art catalyzes meaningful change, empowering artists and collectors to be agents of transformation while addressing global challenges.",
+    "values": [
+      {
+        "title": "Transparency",
+        "description": "Blockchain technology ensures every transaction is traceable and accountable."
+      },
+      {
+        "title": "Impact",
+        "description": "Directly supporting NGOs making measurable progress on SDGs."
+      },
+      {
+        "title": "Creativity",
+        "description": "Celebrating artists who use their craft to inspire social change."
+      },
+      {
+        "title": "Community",
+        "description": "Building a global network of conscious collectors and changemakers."
+      }
+    ]
+  },
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Artists Submit",
+      "description": "Artists submit artworks aligned with specific SDGs, sharing their vision for change."
+    },
+    {
+      "step": 2,
+      "title": "Curated Selection",
+      "description": "Our team curates pieces that powerfully represent each SDG's mission."
+    },
+    {
+      "step": 3,
+      "title": "Transparent Euctions",
+      "description": "Collectors bid on artworks through secure, blockchain-verified euctions."
+    },
+    {
+      "step": 4,
+      "title": "Direct Impact",
+      "description": "Proceeds go directly to verified NGOs working on that SDG, with full transparency."
+    }
+  ],
+  "features": [
+    {
+      "icon": "<¨",
+      "title": "Curated Artworks",
+      "description": "Hand-selected pieces from global artists passionate about social impact."
+    },
+    {
+      "icon": "=",
+      "title": "Blockchain Verified",
+      "description": "Every transaction secured and verified on the blockchain for transparency."
+    },
+    {
+      "icon": "<",
+      "title": "17 SDGs Covered",
+      "description": "Supporting all UN Sustainable Development Goals through targeted fundraising."
+    },
+    {
+      "icon": ">",
+      "title": "Verified NGOs",
+      "description": "Partnering only with vetted organizations making real impact."
+    },
+    {
+      "icon": "=Ê",
+      "title": "Impact Tracking",
+      "description": "Real-time Social Impact Analytics showing measurable outcomes."
+    },
+    {
+      "icon": "=š",
+      "title": "Artist Empowerment",
+      "description": "Fair compensation while supporting causes artists care about."
+    }
+  ],
+  "stats": {
+    "artworks": 247,
+    "artists": 156,
+    "ngos": 42,
+    "raised": 1250000,
+    "euctions": 18,
+    "events": 5
+  },
+  "testimonials": [
+    {
+      "name": "Maria Chen",
+      "role": "Environmental Artist",
+      "quote": "ART EUction gave my work purpose beyond the canvas. Knowing my art directly funds ocean conservation is incredibly fulfilling.",
+      "avatar": "MC"
+    },
+    {
+      "name": "Dr. James Okonkwo",
+      "role": "NGO Director, Education for All",
+      "quote": "The transparency and efficiency of ART EUction's platform has transformed how we fundraise. We can show donors exactly where their money goes.",
+      "avatar": "JO"
+    },
+    {
+      "name": "Sofia Bellucci",
+      "role": "Art Collector",
+      "quote": "I love that my passion for collecting art now makes a tangible difference in the world. It's collecting with conscience.",
+      "avatar": "SB"
+    }
+  ],
+  "footer": {
+    "description": "ART EUction is a revolutionary platform combining art auctions with social impact, supporting the UN's 17 Sustainable Development Goals.",
+    "social": {
+      "twitter": "#",
+      "instagram": "#",
+      "linkedin": "#",
+      "facebook": "#"
+    },
+    "links": {
+      "about": [
+        { "text": "Our Story", "url": "/art-euction-website/about.html" },
+        { "text": "Team", "url": "/art-euction-website/team.html" },
+        { "text": "Partners", "url": "/art-euction-website/partners.html" }
+      ],
+      "platform": [
+        { "text": "How It Works", "url": "/art-euction-website/about.html#how-it-works" },
+        { "text": "Events", "url": "/art-euction-website/events.html" },
+        { "text": "SIA Dashboard", "url": "/art-euction-website/sia.html" },
+        { "text": "SDG Overview", "url": "/art-euction-website/sdg/sdg-overview.html" }
+      ],
+      "artists": [
+        { "text": "Artist Signup", "url": "/art-euction-website/artist-signup.html" },
+        { "text": "Submit Artwork", "url": "/art-euction-website/artwork-submission.html" },
+        { "text": "Artist Guidelines", "url": "#" }
+      ],
+      "legal": [
+        { "text": "Terms of Service", "url": "#" },
+        { "text": "Privacy Policy", "url": "#" },
+        { "text": "Cookie Policy", "url": "#" }
+      ]
+    }
+  }
+}
