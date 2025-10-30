@@ -104,7 +104,10 @@ function populateSDGSidebar() {
  */
 function createSDGCard(sdg) {
   const card = document.createElement('a');
-  card.href = `/art-euction-website/sdg/sdg-${sdg.number}.html`;
+  // Use relative path based on current location
+  const currentPath = window.location.pathname;
+  const inSDGFolder = currentPath.includes('/sdg/');
+  card.href = inSDGFolder ? `sdg-${sdg.number}.html` : `sdg/sdg-${sdg.number}.html`;
   card.className = 'sdg-card';
   card.dataset.sdg = sdg.number;
   card.style.color = sdg.color;
@@ -221,7 +224,7 @@ export function createBreadcrumb() {
   const path = window.location.pathname;
   const segments = path.split('/').filter(s => s && s !== 'art-euction-website');
 
-  let breadcrumbHTML = '<a href="/art-euction-website/index.html">Home</a>';
+  let breadcrumbHTML = '<a href="/index.html">Home</a>';
 
   segments.forEach((segment, index) => {
     const isLast = index === segments.length - 1;
@@ -293,7 +296,7 @@ export function initSearch() {
  */
 function displaySearchResults(results, container) {
   const html = results.map(sdg => `
-    <a href="/art-euction-website/sdg/sdg-${sdg.number}.html" class="search-result-item">
+    <a href="sdg/sdg-${sdg.number}.html" class="search-result-item">
       <span class="sdg-number" style="color: ${sdg.color}">${sdg.number}</span>
       <div>
         <div class="result-title">${sdg.name}</div>
