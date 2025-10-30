@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Влезте в ART EUction - Вашият портал към социално въздействащо изкуство">
+  <meta name="keywords" content="вход, login, ART EUction, аукцион на изкуство">
+  <title>Вход | ART EUction</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Начало</a></li>
+          <li><a href="about.html" class="nav-link">За нас</a></li>
+          <li><a href="sdg/sdg-overview.html" class="nav-link">ЦУР</a></li>
+          <li><a href="events.html" class="nav-link">Събития</a></li>
+          <li><a href="team.html" class="nav-link">Екип</a></li>
+          <li><a href="partners.html" class="nav-link">Партньори</a></li>
+          <li><a href="sia.html" class="nav-link">Анализи</a></li>
+        </ul>
+
+        <div class="auth-buttons nav-cta">
+          <a href="login.html" class="btn btn-outline btn-sm">Вход</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Регистрация</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="section auth-section">
+      <div class="container">
+        <div class="auth-container">
+          <!-- Auth Card -->
+          <div class="auth-card">
+            <div class="auth-header">
+              <h1 class="auth-title">Добре дошли отново</h1>
+              <p class="auth-subtitle">Влезте в акаунта си, за да продължите</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+              <!-- Email Field -->
+              <div class="form-group">
+                <label for="email" class="form-label">Имейл адрес</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="вашият@имейл.com"
+                  required
+                  autocomplete="email"
+                >
+              </div>
+
+              <!-- Password Field -->
+              <div class="form-group">
+                <label for="password" class="form-label">Парола</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-input"
+                  placeholder="••••••••"
+                  required
+                  autocomplete="current-password"
+                >
+              </div>
+
+              <!-- Remember Me & Forgot Password -->
+              <div class="form-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="remember" id="remember">
+                  <span>Запомни ме</span>
+                </label>
+                <a href="forgot-password.html" class="link-primary">Забравена парола?</a>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-block" id="login-btn">
+                Вход
+              </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="auth-divider">
+              <span>или</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+              <button type="button" class="btn btn-google" id="google-login-btn">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.64 9.20454C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20454Z" fill="#4285F4"/>
+                  <path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4204 9 14.4204C6.65591 14.4204 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/>
+                  <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
+                  <path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"/>
+                </svg>
+                Вход с Google
+              </button>
+            </div>
+
+            <!-- Register Link -->
+            <div class="auth-footer">
+              <p>Нямате акаунт? <a href="register.html" class="link-primary">Регистрирайте се</a></p>
+            </div>
+          </div>
+
+          <!-- Auth Aside -->
+          <div class="auth-aside">
+            <div class="auth-aside-content">
+              <div style="font-size: 4rem; margin-bottom: 2rem;">🎨</div>
+              <h2>Присъединете се към глобалното движение</h2>
+              <p>Наддавайте за изключителни произведения на изкуството и подкрепете Целите за устойчиво развитие на ООН.</p>
+
+              <div class="auth-stats">
+                <div class="auth-stat">
+                  <div class="stat-number">247+</div>
+                  <div class="stat-label">Творби</div>
+                </div>
+                <div class="auth-stat">
+                  <div class="stat-number">156+</div>
+                  <div class="stat-label">Художници</div>
+                </div>
+                <div class="auth-stat">
+                  <div class="stat-number">42+</div>
+                  <div class="stat-label">НПО партньори</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>За ART EUction</h4>
+          <p>Революционна платформа, комбинираща художествени аукциони със социално въздействие, подкрепяща 17-те Цели за устойчиво развитие на ООН.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Платформа</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Как работи</a></li>
+            <li><a href="events.html">Събития</a></li>
+            <li><a href="sia.html">Табло за анализи</a></li>
+            <li><a href="sdg/sdg-overview.html">Преглед на ЦУР</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>За художници</h4>
+          <ul class="footer-links">
+            <li><a href="artist-signup.html">Регистрация на художник</a></li>
+            <li><a href="artwork-submission.html">Изпратете творба</a></li>
+            <li><a href="#">Насоки за художници</a></li>
+            <li><a href="#">ЧЗВ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Правна информация</h4>
+          <ul class="footer-links">
+            <li><a href="#">Условия за ползване</a></li>
+            <li><a href="#">Политика за поверителност</a></li>
+            <li><a href="#">Политика за бисквитки</a></li>
+            <li><a href="team.html">Свържете се с нас</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. Всички права запазени. | Изкуството среща въздействието</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script type="module">
+    import { loginWithEmail, loginWithGoogle, redirectIfAuthenticated } from './js/auth.js';
+    import { showNotification } from './js/utils.js';
+    import { initNavigation } from './js/navigation.js';
+
+    // Initialize navigation
+    initNavigation();
+
+    // Redirect if already authenticated
+    redirectIfAuthenticated();
+
+    // Handle login form submission
+    const loginForm = document.getElementById('login-form');
+    const loginBtn = document.getElementById('login-btn');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const remember = document.getElementById('remember').checked;
+
+      // Disable button and show loading
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Влизане...';
+
+      // Attempt login
+      const result = await loginWithEmail(email, password);
+
+      if (result.success) {
+        showNotification('Успешно влизане! Добре дошли обратно.', 'success');
+
+        // Redirect to intended page or home
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirect = urlParams.get('redirect') || 'index.html';
+
+        setTimeout(() => {
+          window.location.href = redirect;
+        }, 1000);
+      } else {
+        showNotification('Грешка при влизане: ' + result.error, 'error');
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Вход';
+      }
+    });
+
+    // Handle Google login
+    const googleBtn = document.getElementById('google-login-btn');
+
+    googleBtn.addEventListener('click', async () => {
+      googleBtn.disabled = true;
+      googleBtn.textContent = 'Пренасочване...';
+
+      const result = await loginWithGoogle();
+
+      if (!result.success) {
+        showNotification('Грешка при влизане с Google: ' + result.error, 'error');
+        googleBtn.disabled = false;
+        googleBtn.innerHTML = `
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.64 9.20454C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20454Z" fill="#4285F4"/>
+            <path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4204 9 14.4204C6.65591 14.4204 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/>
+            <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
+            <path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"/>
+          </svg>
+          Вход с Google
+        `;
+      }
+      // If successful, user will be redirected by OAuth flow
+    });
+  </script>
+</body>
+</html>
