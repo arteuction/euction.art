@@ -7,6 +7,7 @@ import { initNavigation, setupAnnouncementBar } from './navigation.js';
 import { initAnimations } from './animations.js';
 import { PLATFORM_STATS, formatCurrency } from './data.js';
 import { showNotification } from './utils.js';
+import { initAuthUI } from './auth.js';
 
 /**
  * Initialize application
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initAnimations();
   setupAnnouncementBar();
+  initAuthUI();
 
   // Page-specific initialization
   initPageSpecific();

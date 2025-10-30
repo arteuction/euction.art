@@ -118,7 +118,14 @@
 .nav-cta {
   margin-left: 1rem;
   display: flex;
+  align-items: center;
   gap: 0.75rem;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 /* ==================== HAMBURGER MENU ==================== */
