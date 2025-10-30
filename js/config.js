@@ -9,7 +9,7 @@ export const config = {
   // Supabase Configuration
   supabase: {
     url: 'https://niwonrhyekgllofdwzoi.supabase.co',
-    anonKey: 'YOUR_SUPABASE_ANON_KEY_HERE' // Replace this with your actual anon key
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pd29ucmh5ZWtnbGxvZmR3em9pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEyNTEzNTEsImV4cCI6MjA3NjgyNzM1MX0.OhKUknglcc2bbxs8zdgWob27UjCjrvI3g-9SyTHmYXI'
   },
 
   // App Configuration
