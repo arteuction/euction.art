@@ -11,7 +11,7 @@ export const SDG_DATA = [
     name: 'No Poverty',
     color: '#E5243B',
     description: 'End poverty in all its forms everywhere',
-    icon: '<'
+    icon: '💰'
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const SDG_DATA = [
     name: 'Zero Hunger',
     color: '#DDA63A',
     description: 'End hunger, achieve food security and improved nutrition',
-    icon: '<>'
+    icon: '🌾'
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const SDG_DATA = [
     name: 'Good Health',
     color: '#4C9F38',
     description: 'Ensure healthy lives and promote well-being for all',
-    icon: 'd'
+    icon: '❤️'
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const SDG_DATA = [
     name: 'Quality Education',
     color: '#C5192D',
     description: 'Ensure inclusive and equitable quality education',
-    icon: '=�'
+    icon: '📚'
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ export const SDG_DATA = [
     name: 'Gender Equality',
     color: '#FF3A21',
     description: 'Achieve gender equality and empower all women and girls',
-    icon: '�'
+    icon: '⚖️'
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const SDG_DATA = [
     name: 'Clean Water',
     color: '#26BDE2',
     description: 'Ensure availability and sustainable management of water',
-    icon: '=�'
+    icon: '💧'
   },
   {
     id: 7,
@@ -59,7 +59,7 @@ export const SDG_DATA = [
     name: 'Clean Energy',
     color: '#FCC30B',
     description: 'Ensure access to affordable, reliable, sustainable energy',
-    icon: '�'
+    icon: '⚡'
   },
   {
     id: 8,
@@ -67,7 +67,7 @@ export const SDG_DATA = [
     name: 'Decent Work',
     color: '#A21942',
     description: 'Promote sustained, inclusive economic growth and employment',
-    icon: '=�'
+    icon: '💼'
   },
   {
     id: 9,
@@ -75,7 +75,7 @@ export const SDG_DATA = [
     name: 'Industry & Innovation',
     color: '#FD6925',
     description: 'Build resilient infrastructure and foster innovation',
-    icon: '<�'
+    icon: '🏗️'
   },
   {
     id: 10,
@@ -83,7 +83,7 @@ export const SDG_DATA = [
     name: 'Reduced Inequalities',
     color: '#DD1367',
     description: 'Reduce inequality within and among countries',
-    icon: '>'
+    icon: '🤝'
   },
   {
     id: 11,
@@ -91,7 +91,7 @@ export const SDG_DATA = [
     name: 'Sustainable Cities',
     color: '#FD9D24',
     description: 'Make cities and human settlements inclusive and sustainable',
-    icon: '<�'
+    icon: '🏙️'
   },
   {
     id: 12,
@@ -99,7 +99,7 @@ export const SDG_DATA = [
     name: 'Responsible Consumption',
     color: '#BF8B2E',
     description: 'Ensure sustainable consumption and production patterns',
-    icon: '{'
+    icon: '♻️'
   },
   {
     id: 13,
@@ -107,7 +107,7 @@ export const SDG_DATA = [
     name: 'Climate Action',
     color: '#3F7E44',
     description: 'Take urgent action to combat climate change',
-    icon: '<!'
+    icon: '🌍'
   },
   {
     id: 14,
@@ -115,8 +115,7 @@ export const SDG_DATA = [
     name: 'Life Below Water',
     color: '#0A97D9',
     description: 'Conserve and sustainably use oceans, seas and marine resources',
-    icon: '<
-'
+    icon: '🐠'
   },
   {
     id: 15,
@@ -124,7 +123,7 @@ export const SDG_DATA = [
     name: 'Life on Land',
     color: '#56C02B',
     description: 'Protect, restore and promote sustainable use of ecosystems',
-    icon: '<3'
+    icon: '🌳'
   },
   {
     id: 16,
@@ -132,7 +131,7 @@ export const SDG_DATA = [
     name: 'Peace & Justice',
     color: '#00689D',
     description: 'Promote peaceful and inclusive societies for sustainable development',
-    icon: '�'
+    icon: '⚖️'
   },
   {
     id: 17,
@@ -140,7 +139,7 @@ export const SDG_DATA = [
     name: 'Partnerships',
     color: '#19486A',
     description: 'Strengthen means of implementation and global partnerships',
-    icon: '>'
+    icon: '🤝'
   }
 ];
 

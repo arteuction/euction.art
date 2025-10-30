@@ -3,19 +3,13 @@
  * Environment variables and app configuration
  */
 
-// For production: These values will be replaced during build by Netlify
-// For development: Create a .env.local file and use a build script to inject these
+// TODO: Add your Supabase anon key here
+// Get it from: Supabase Dashboard → Settings → API
 export const config = {
   // Supabase Configuration
   supabase: {
-    url: import.meta.env?.VITE_SUPABASE_URL ||
-         window.ENV?.SUPABASE_URL ||
-         process.env?.SUPABASE_URL ||
-         '',
-    anonKey: import.meta.env?.VITE_SUPABASE_ANON_KEY ||
-             window.ENV?.SUPABASE_ANON_KEY ||
-             process.env?.SUPABASE_ANON_KEY ||
-             ''
+    url: 'https://niwonrhyekgllofdwzoi.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pd29ucmh5ZWtnbGxvZmR3em9pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEyNTEzNTEsImV4cCI6MjA3NjgyNzM1MX0.OhKUknglcc2bbxs8zdgWob27UjCjrvI3g-9SyTHmYXI'
   },
 
   // App Configuration
