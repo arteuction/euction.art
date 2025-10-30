@@ -58,7 +58,7 @@
   ],
   "features": [
     {
-      "icon": "<¨",
+      "icon": "<ï¿½",
       "title": "Curated Artworks",
       "description": "Hand-selected pieces from global artists passionate about social impact."
     },
@@ -78,12 +78,12 @@
       "description": "Partnering only with vetted organizations making real impact."
     },
     {
-      "icon": "=Ê",
+      "icon": "=ï¿½",
       "title": "Impact Tracking",
       "description": "Real-time Social Impact Analytics showing measurable outcomes."
     },
     {
-      "icon": "=š",
+      "icon": "=ï¿½",
       "title": "Artist Empowerment",
       "description": "Fair compensation while supporting causes artists care about."
     }
@@ -126,19 +126,19 @@
     },
     "links": {
       "about": [
-        { "text": "Our Story", "url": "/art-euction-website/about.html" },
-        { "text": "Team", "url": "/art-euction-website/team.html" },
-        { "text": "Partners", "url": "/art-euction-website/partners.html" }
+        { "text": "Our Story", "url": "/about.html" },
+        { "text": "Team", "url": "/team.html" },
+        { "text": "Partners", "url": "/partners.html" }
       ],
       "platform": [
-        { "text": "How It Works", "url": "/art-euction-website/about.html#how-it-works" },
-        { "text": "Events", "url": "/art-euction-website/events.html" },
-        { "text": "SIA Dashboard", "url": "/art-euction-website/sia.html" },
-        { "text": "SDG Overview", "url": "/art-euction-website/sdg/sdg-overview.html" }
+        { "text": "How It Works", "url": "/about.html#how-it-works" },
+        { "text": "Events", "url": "/events.html" },
+        { "text": "SIA Dashboard", "url": "/sia.html" },
+        { "text": "SDG Overview", "url": "/sdg/sdg-overview.html" }
       ],
       "artists": [
-        { "text": "Artist Signup", "url": "/art-euction-website/artist-signup.html" },
-        { "text": "Submit Artwork", "url": "/art-euction-website/artwork-submission.html" },
+        { "text": "Artist Signup", "url": "/artist-signup.html" },
+        { "text": "Submit Artwork", "url": "/artwork-submission.html" },
         { "text": "Artist Guidelines", "url": "#" }
       ],
       "legal": [
