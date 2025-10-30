@@ -16,7 +16,7 @@ export const config = {
   app: {
     name: 'ART EUction',
     version: '1.0.0',
-    environment: import.meta.env?.MODE || process.env?.NODE_ENV || 'production'
+    environment: 'production'
   },
 
   // Feature Flags
