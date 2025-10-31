@@ -275,7 +275,7 @@ a:hover {
 }
 
 .card-body {
-  color: var(--gray-700);
+  color: var(--gray-900);
 }
 
 /* ==================== BUTTONS ==================== */
@@ -464,7 +464,7 @@ a:hover {
 
 .section-subtitle {
   font-size: 1.125rem;
-  color: var(--gray-700);
+  color: var(--gray-800);
   max-width: 600px;
   margin: 0 auto;
   font-weight: 500;
@@ -693,7 +693,7 @@ select.form-control {
 
 .auth-subtitle {
   font-size: 1rem;
-  color: var(--gray-600);
+  color: var(--gray-800);
   margin-bottom: 0;
 }
 
@@ -825,7 +825,7 @@ select.form-control {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--gray-200);
-  color: var(--gray-600);
+  color: var(--gray-800);
   font-size: 0.875rem;
 }
 
@@ -845,7 +845,7 @@ select.form-control {
 
 .auth-aside-content p {
   font-size: 1.125rem;
-  color: var(--gray-600);
+  color: var(--gray-800);
   margin-bottom: 2rem;
 }
 
@@ -869,7 +869,7 @@ select.form-control {
 
 .stat-label {
   font-size: 0.875rem;
-  color: var(--gray-600);
+  color: var(--gray-800);
   margin-top: 0.25rem;
 }
 
@@ -900,7 +900,7 @@ select.form-control {
 
 .feature-text p {
   font-size: 0.875rem;
-  color: var(--gray-600);
+  color: var(--gray-800);
   margin-bottom: 0;
 }
 
