@@ -3,22 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Регистрация на артист в ART EUction — представете своето изкуство и подкрепете глобални каузи чрез Целите за устойчиво развитие на ООН.">
-  <meta name="keywords" content="регистрация на артист, изкуство с кауза, културна платформа, ЦУР, социално въздействие, ARTeuCtion">
-  <title>Регистрация на артист | ART EUction</title>
+  <meta name="description" content="Присъединете се като артист към ART EUction – платформа за социално въздействие чрез изкуство.">
+  <title>Стани Будител! | ART EUction</title>
 
-  <!-- Стилове -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/responsive.css">
-
-  <!-- Икона -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 </head>
+<body class="has-sidebar">
 
-<body>
-
-  <!-- Хедър -->
+  <!-- Header -->
   <header class="header">
     <div class="header-container">
       <a href="index.html" class="logo">
@@ -43,7 +39,7 @@
         </div>
       </nav>
 
-      <button class="hamburger" aria-label="Отвори меню">
+      <button class="hamburger" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
@@ -51,191 +47,169 @@
     </div>
   </header>
 
-  <!-- Основно съдържание -->
-  <main class="main-content">
+  <!-- SDG Sidebar -->
+  <aside class="sdg-sidebar">
+    <div class="sidebar-header">
+      <h3 class="sidebar-title">ЦУР на ООН</h3>
+      <p class="sidebar-subtitle">Разгледайте творби, подкрепящи всяка Цел за устойчиво развитие</p>
+    </div>
+    <div class="sdg-grid"></div>
+    <div class="sidebar-footer">
+      <a href="sdg/sdg-overview.html" class="sidebar-link">
+        <span class="icon">📊</span>
+        Всички ЦУР
+      </a>
+    </div>
+  </aside>
 
-    <!-- Hero секция -->
+  <button class="sidebar-toggle" aria-label="Toggle SDG sidebar">ЦУР</button>
+  <div class="sidebar-overlay"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero -->
     <section class="hero" style="padding: 4rem 0;">
       <div class="container">
-        <h1 class="hero-title">Присъединете се като артист</h1>
+        <h1 class="hero-title">Стани Будител!</h1>
         <p class="hero-subtitle">Покажете своето изкуство, вдъхновете света и подкрепете каузи, които имат значение.</p>
       </div>
     </section>
 
-    <!-- Предимства -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Защо да се присъедините към ART EUction?</h2>
-          <p class="section-subtitle">Предимства за творци от цялата страна</p>
-        </div>
-
-        <div class="grid grid-4">
-          <div class="card text-center">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">💰</div>
-            <h4>Справедливо възнаграждение</h4>
-            <p style="color: var(--gray-800);">Получавате справедлив дял от приходите от вашите творби без посредници и скрити такси.</p>
-          </div>
-
-          <div class="card text-center">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🌍</div>
-            <h4>Глобална видимост</h4>
-            <p style="color: var(--gray-800);">Вашето изкуство достига до международна аудитория, подкрепяща социални каузи.</p>
-          </div>
-
-          <div class="card text-center">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">❤️</div>
-            <h4>Изкуство с мисия</h4>
-            <p style="color: var(--gray-800);">Всяка ваша творба може да подкрепи конкретна Цел за устойчиво развитие (ЦУР).</p>
-          </div>
-
-          <div class="card text-center">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">⚙️</div>
-            <h4>Без административни трудности</h4>
-            <p style="color: var(--gray-800);">Регистрацията е лесна и прозрачна – вие творите, ние се грижим за останалото.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Форма за регистрация -->
-    <section class="section" style="background: rgba(255,255,255,0.5);">
-      <div class="container" style="max-width: 800px;">
-        <div class="card">
-          <div class="card-header">
-            <h2 style="margin-bottom: 0.5rem;">Регистрация на артист</h2>
-            <p style="color: var(--gray-800); margin: 0;">Попълнете формата, за да станете част от нашата общност от социално ангажирани творци</p>
-          </div>
-
-          <form id="artist-signup-form" style="margin-top: 2rem;">
-            <!-- Основна информация -->
-            <div class="form-group">
-              <label for="full-name" class="form-label">Име и фамилия *</label>
-              <input type="text" id="full-name" name="full-name" class="form-control" required placeholder="Въведете вашето име">
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="form-label">Имейл адрес *</label>
-              <input type="email" id="email" name="email" class="form-control" required placeholder="your@email.com">
-            </div>
-
-            <div class="form-group">
-              <label for="location" class="form-label">Населено място *</label>
-              <input type="text" id="location" name="location" class="form-control" required placeholder="Пример: Плевен, България">
-            </div>
-
-            <!-- Профил на артиста -->
-            <div class="form-group">
-              <label for="artist-name" class="form-label">Артистичен псевдоним</label>
-              <input type="text" id="artist-name" name="artist-name" class="form-control" placeholder="Името, с което се представяте професионално">
-            </div>
-
-            <div class="form-group">
-              <label for="bio" class="form-label">Кратка биография *</label>
-              <textarea id="bio" name="bio" class="form-control" required placeholder="Разкажете накратко за себе си, вашето изкуство и вдъхновение" style="min-height: 120px;"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="portfolio-url" class="form-label">Линк към портфолио *</label>
-              <input type="url" id="portfolio-url" name="portfolio-url" class="form-control" required placeholder="https://yourwebsite.com или Instagram линк">
-            </div>
-
-            <!-- Цели за устойчиво развитие -->
-            <div class="form-group">
-              <label class="form-label">Кои Цели за устойчиво развитие (ЦУР) ви вдъхновяват? (изберете до 3) *</label>
-              <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 1rem;">
-                <label><input type="checkbox" name="sdg" value="4"> ЦУР 4: Качествено образование</label>
-                <label><input type="checkbox" name="sdg" value="5"> ЦУР 5: Равенство между половете</label>
-                <label><input type="checkbox" name="sdg" value="8"> ЦУР 8: Достоен труд и икономически растеж</label>
-                <label><input type="checkbox" name="sdg" value="10"> ЦУР 10: Намаляване на неравенствата</label>
-                <label><input type="checkbox" name="sdg" value="11"> ЦУР 11: Устойчиви градове и общности</label>
-                <label><input type="checkbox" name="sdg" value="13"> ЦУР 13: Действия за климата</label>
-                <label><input type="checkbox" name="sdg" value="15"> ЦУР 15: Живот на сушата</label>
-                <label><input type="checkbox" name="sdg" value="17"> ЦУР 17: Партньорства за целите</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="motivation" class="form-label">Защо тези ЦУР са важни за вас?</label>
-              <textarea id="motivation" name="motivation" class="form-control" placeholder="Разкажете как вашето изкуство отразява тези ценности" style="min-height: 100px;"></textarea>
-            </div>
-
-            <!-- Съгласие -->
-            <div class="form-group">
-              <label style="display: flex; align-items: start; gap: 0.75rem;">
-                <input type="checkbox" name="terms" required style="width: 18px; height: 18px; margin-top: 0.25rem;">
-                <span>Съгласен/а съм с <a href="#" style="color: var(--accent-cyan); text-decoration: underline;">Условията за ползване</a> и потвърждавам, че имам авторски права върху творбите, които ще представя. *</span>
-              </label>
-            </div>
-
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
-              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Изпрати регистрацията</button>
-              <p style="text-align: center; color: var(--gray-800); font-size: 0.875rem; margin-top: 1rem;">
-                Ще получите потвърждение в рамките на 5–7 работни дни.
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Често задавани въпроси -->
+    <!-- Benefits -->
     <section class="section">
       <div class="container" style="max-width: 900px;">
-        <div class="section-header">
-          <h2 class="section-title">Често задавани въпроси</h2>
-        </div>
+        <h2 class="section-title">Защо да се присъедините към ART EUction?</h2>
+        <p><strong>💰 Справедливо възнаграждение</strong> – Получавате 45% от приходите от вашите творби без посредници и скрити такси.</p>
+        <p><strong>🌍 Глобална видимост</strong> – Вашето изкуство достига до международна аудитория, подкрепяща социални каузи.</p>
+        <p><strong>❤️ Изкуство с мисия</strong> – Всяка ваша творба може да подкрепи конкретна Цел за устойчиво развитие (ЦУР).</p>
+        <p><strong>⚙️ Без административни трудности</strong> – Регистрацията е лесна и прозрачна – вие творите, ние се грижим за останалото.</p>
+      </div>
+    </section>
 
-        <div class="grid grid-2">
-          <div class="card">
-            <h4>Как се избират артистите?</h4>
-            <p>Нашият екип подбира творци с ясно изразена визия, социална ангажираност и силно портфолио.</p>
+    <!-- Registration Form -->
+    <section class="section" style="background-color: var(--gray-50);">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="section-title">Регистрация</h2>
+        <p>Попълнете формата, за да станете част от нашата общност от социално ангажирани творци.</p>
+
+        <form id="artist-signup-form" style="margin-top: 2rem;">
+          <!-- Basic Info -->
+          <div class="form-group">
+            <label for="full-name" class="form-label">Име и фамилия *</label>
+            <input type="text" id="full-name" name="full-name" class="form-control" required placeholder="Въведете вашето име">
           </div>
 
-          <div class="card">
-            <h4>Какво възнаграждение получавам?</h4>
-            <p>Артистите получават между 20–25% от приходите от търгове. Останалите средства подкрепят избрани каузи.</p>
+          <div class="form-group">
+            <label for="email" class="form-label">Имейл адрес *</label>
+            <input type="email" id="email" name="email" class="form-control" required placeholder="your@email.com">
           </div>
 
-          <div class="card">
-            <h4>Приемате ли дигитално изкуство?</h4>
-            <p>Да. Приемаме както физически, така и дигитални творби, включително NFT формати.</p>
+          <div class="form-group">
+            <label for="location" class="form-label">Населено място *</label>
+            <input type="text" id="location" name="location" class="form-control" required placeholder="Пример: Плевен, България">
           </div>
 
-          <div class="card">
-            <h4>Колко време отнема одобрението?</h4>
-            <p>Обикновено в рамките на 5–7 дни след подаване на регистрацията ще получите отговор.</p>
+          <!-- Artist Profile -->
+          <div class="form-group">
+            <label for="artist-name" class="form-label">Артистичен псевдоним</label>
+            <input type="text" id="artist-name" name="artist-name" class="form-control" placeholder="Името, с което се представяте професионално">
           </div>
-        </div>
+
+          <div class="form-group">
+            <label for="bio" class="form-label">Кратка биография *</label>
+            <textarea id="bio" name="bio" class="form-control" required placeholder="Разкажете накратко за себе си, вашето изкуство и вдъхновение" style="min-height: 120px;"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="portfolio-url" class="form-label">Линк към портфолио *</label>
+            <input type="url" id="portfolio-url" name="portfolio-url" class="form-control" required placeholder="https://yourwebsite.com или Instagram линк">
+          </div>
+
+          <!-- SDGs -->
+          <div class="form-group">
+            <label class="form-label">Кои Цели за устойчиво развитие (ЦУР) ви вдъхновяват? (изберете до 3) *</label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 1rem;">
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="4"> ЦУР 4: Качествено образование</label>
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="5"> ЦУР 5: Равенство между половете</label>
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="8"> ЦУР 8: Достоен труд</label>
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="10"> ЦУР 10: Намаляване на неравенствата</label>
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="11"> ЦУР 11: Устойчиви градове</label>
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="13"> ЦУР 13: Действия за климата</label>
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="15"> ЦУР 15: Живот на сушата</label>
+              <label style="color: var(--gray-900);"><input type="checkbox" name="sdg" value="17"> ЦУР 17: Партньорства</label>
+            </div>
+          </div>
+
+          <!-- Art Category -->
+          <div class="form-group">
+            <label for="art-category" class="form-label">Категория изкуство *</label>
+            <select id="art-category" name="art-category" class="form-control" required>
+              <option value="">Изберете категория</option>
+              <option value="painting">Живопис</option>
+              <option value="sculpture">Скулптура</option>
+              <option value="photography">Фотография</option>
+              <option value="digital">Дигитално изкуство</option>
+              <option value="mixed">Смесена техника</option>
+              <option value="other">Друго</option>
+            </select>
+          </div>
+
+          <!-- Terms -->
+          <div class="form-group">
+            <label style="display: flex; align-items: start; gap: 0.5rem; color: var(--gray-900);">
+              <input type="checkbox" name="terms" required style="margin-top: 0.25rem;">
+              <span>Съгласен/а съм с <a href="#" style="color: var(--gray-900); text-decoration: underline;">Условията за ползване</a> и <a href="#" style="color: var(--gray-900); text-decoration: underline;">Политиката за поверителност</a> *</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">Изпратете заявката</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="section">
+      <div class="container" style="max-width: 900px;">
+        <h2 class="section-title">Какво следва?</h2>
+        <p><strong>1. Преглед на профила</strong> – Нашият екип ще прегледа вашата регистрация в рамките на 3-5 работни дни.</p>
+        <p><strong>2. Одобрение и настройка</strong> – След одобрение ще получите имейл с инструкции за създаване на вашия профил.</p>
+        <p><strong>3. Качване на творби</strong> – Започнете да качвате вашите произведения и да ги свързвате с ЦУР.</p>
+        <p><strong>4. Участие в аукциони</strong> – Вашето изкуство ще бъде включено в нашите тематични аукциони.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: var(--primary-gradient);">
+      <div class="container text-center">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--gray-900);">Имате въпроси?</h2>
+        <p style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--gray-900);">Нашият екип е тук, за да ви помогне на всяка стъпка от пътя.</p>
+        <a href="mailto:artists@arteuction.com" class="btn" style="background: white; color: var(--gray-900);">Свържете се с нас</a>
       </div>
     </section>
   </main>
 
-  <!-- Футър -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>За ART EUction</h4>
-          <p>Платформа, която свързва изкуството, социалната промяна и устойчивото развитие.</p>
+          <h4>За ARTeuCtion</h4>
+          <p>Платформа, обединяваща изкуство със социално въздействие, подкрепяща Целите за устойчиво развитие на ООН.</p>
         </div>
-
         <div class="footer-section">
           <h4>Платформа</h4>
           <ul class="footer-links">
-            <li><a href="about.html">Как работим</a></li>
-            <li><a href="sdg/sdg-overview.html">ЦУР</a></li>
+            <li><a href="about.html">Нашата мисия</a></li>
+            <li><a href="sdg/sdg-overview.html">Преглед на ЦУР</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
-          <h4>За артисти</h4>
+          <h4>Будители</h4>
           <ul class="footer-links">
-            <li><a href="artist-signup.html">Регистрация</a></li>
-            <li><a href="artwork-submission.html">Изпрати творба</a></li>
+            <li><a href="artist-signup.html">Стани Будител!</a></li>
+            <li><a href="artwork-submission.html">Изпратете творба</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
           <h4>Правна информация</h4>
           <ul class="footer-links">
@@ -244,14 +218,27 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; 2025 ART EUction. Всички права запазени. | Art Meets Impact</p>
+        <p>&copy; 2025 ARTeuCtion. Всички права запазени. | Изкуството като двигател на промяна</p>
       </div>
     </div>
   </footer>
 
-  <!-- Скриптове -->
   <script type="module" src="js/main.js"></script>
+  <script>
+    // Simple form validation
+    document.getElementById('artist-signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const sdgCheckboxes = document.querySelectorAll('input[name="sdg"]:checked');
+      if (sdgCheckboxes.length === 0 || sdgCheckboxes.length > 3) {
+        alert('Моля, изберете между 1 и 3 ЦУР.');
+        return;
+      }
+
+      alert('Благодарим! Вашата заявка е изпратена успешно. Ще се свържем с вас скоро.');
+      this.reset();
+    });
+  </script>
 </body>
 </html>
