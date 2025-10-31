@@ -80,27 +80,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   text-align: center;
   text-decoration: none;
   background: var(--white);
   border: 2px solid transparent;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   transition: var(--transition-base);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-}
-
-.sdg-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: currentColor;
-  opacity: 0.8;
 }
 
 .sdg-card:hover {
@@ -113,6 +102,18 @@
   border-color: currentColor;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-md);
+}
+
+.sdg-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.25rem;
+  transition: var(--transition-base);
+}
+
+.sdg-card:hover .sdg-image {
+  transform: scale(1.05);
 }
 
 .sdg-number {

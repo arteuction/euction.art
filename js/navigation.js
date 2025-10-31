@@ -113,9 +113,10 @@ function createSDGCard(sdg) {
   card.style.color = sdg.color;
   card.title = sdg.description;
 
+  // Use PNG image instead of number and name
+  const imagePath = inSDGFolder ? `../${sdg.number}.png` : `${sdg.number}.png`;
   card.innerHTML = `
-    <div class="sdg-number">${sdg.number}</div>
-    <div class="sdg-name">${sdg.name}</div>
+    <img src="${imagePath}" alt="SDG ${sdg.number}: ${sdg.name}" class="sdg-image" />
   `;
 
   return card;
