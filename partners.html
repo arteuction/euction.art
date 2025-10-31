@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Запознайте се с нашите партньори НПО и корпоративни партньори, работещи заедно за социално въздействие чрез изкуство">
-  <meta name="keywords" content="партньори НПО, корпоративни партньори, социално въздействие, благотворителни организации">
-  <title>Нашите партньори | ART EUction</title>
+  <meta name="description" content="Вашата полза от ARTeuCtion — платформа, която свързва артисти, бизнес и НПО в обща екосистема на културно и социално въздействие.">
+  <meta name="keywords" content="партньори, артисти, бизнес, НПО, читалища, социална отговорност, културна платформа">
+  <title>Вашата полза | ART EUction</title>
 
-  <!-- Stylesheets -->
+  <!-- Стилове -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'><�</text></svg>">
+  <!-- Икона -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
-<body class="has-sidebar">
 
-  <!-- Header -->
+<body>
+
+  <!-- Хедър -->
   <header class="header">
     <div class="header-container">
       <a href="index.html" class="logo">
@@ -33,17 +33,12 @@
           <li><a href="sdg/sdg-overview.html" class="nav-link">ЦУР</a></li>
           <li><a href="events.html" class="nav-link">Събития</a></li>
           <li><a href="team.html" class="nav-link">Екип</a></li>
-          <li><a href="partners.html" class="nav-link active">Партньори</a></li>
+          <li><a href="partners.html" class="nav-link active">Вашата полза</a></li>
           <li><a href="sia.html" class="nav-link">Анализи</a></li>
         </ul>
-
-        <div class="nav-cta">
-          <a href="artist-signup.html" class="btn btn-secondary btn-sm">За художници</a>
-          <a href="artwork-submission.html" class="btn btn-primary btn-sm">Изпратете творба</a>
-        </div>
       </nav>
 
-      <button class="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" aria-label="Отвори меню">
         <span></span>
         <span></span>
         <span></span>
@@ -51,199 +46,126 @@
     </div>
   </header>
 
-  <!-- SDG Sidebar -->
-  <aside class="sdg-sidebar">
-    <div class="sidebar-header">
-      <h3 class="sidebar-title">ЦУР на ООН</h3>
-      <p class="sidebar-subtitle">Разгледайте творби, подкрепящи всяка Цел за устойчиво развитие</p>
-    </div>
-
-    <div class="sdg-grid">
-      <!-- SDG cards will be populated by JavaScript -->
-    </div>
-
-    <div class="sidebar-footer">
-      <a href="sdg/sdg-overview.html" class="sidebar-link">
-        <span class="icon"><�</span>
-        Всички ЦУР
-      </a>
-      <a href="sia.html" class="sidebar-link">
-        <span class="icon">=�</span>
-        Табло за въздействие
-      </a>
-    </div>
-  </aside>
-
-  <!-- Mobile Sidebar Toggle -->
-  <button class="sidebar-toggle" aria-label="Toggle SDG sidebar">
-    ЦУР
-  </button>
-
-  <!-- Sidebar Overlay (mobile) -->
-  <div class="sidebar-overlay"></div>
-
-  <!-- Main Content -->
+  <!-- Основно съдържание -->
   <main class="main-content">
-    <!-- Hero Section -->
+
+    <!-- Въведение -->
     <section class="hero" style="padding: 4rem 0;">
       <div class="container">
-        <h1 class="hero-title">Our Partners</h1>
-        <p class="hero-subtitle">Working together to create meaningful change through art</p>
+        <h1 class="hero-title">Вашата полза</h1>
+        <p class="hero-subtitle">ARTeuCtion обединява творци, бизнес и неправителствени организации в обща екосистема, където всяка страна печели – време, спокойствие и смисъл.</p>
       </div>
     </section>
 
-    <!-- Stats -->
+    <!-- За артистите -->
     <section class="section">
-      <div class="container">
-        <div class="grid grid-4">
-          <div class="card card-glass text-center">
-            <h3 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent-cyan);">0</h3>
-            <p style="color: var(--gray-600); font-weight: 600;">NGO Partners</p>
-          </div>
-          <div class="card card-glass text-center">
-            <h3 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent-green);">0</h3>
-            <p style="color: var(--gray-600); font-weight: 600;">Corporate Partners</p>
-          </div>
-          <div class="card card-glass text-center">
-            <h3 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent-lime);">0</h3>
-            <p style="color: var(--gray-600); font-weight: 600;">SDGs Covered</p>
-          </div>
-          <div class="card card-glass text-center">
-            <h3 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent-green);">$0</h3>
-            <p style="color: var(--gray-600); font-weight: 600;">Total Impact</p>
-          </div>
+      <div class="container" style="max-width: 900px;">
+        <h2 class="section-title">За артистите</h2>
+        <p>Творците от малките градове често губят безброй часове в опити да намерят публика, пазари или подкрепа. Ние премахваме тази тежест. ART EUction ви осигурява цялостна дигитална сцена, където можете да представите своето изкуство, да участвате в онлайн търгове и да получавате справедливо възнаграждение – без посредници, без административни лабиринти, без компромиси с достойнството ви.</p>
+        <ul>
+          <li>дългото търсене на галерии и купувачи</li>
+          <li>несигурността при договаряне на условия</li>
+          <li>страха, че трудът ви ще остане невидим</li>
+        </ul>
+        <p><strong>Вие творите. Ние се грижим изкуството ви да достигне до хората, които го ценят.</strong></p>
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="artist-signup.html" class="btn btn-primary btn-lg">Регистрирай се като артист</a>
         </div>
       </div>
     </section>
 
-    <!-- NGO Partners -->
-    <section class="section" style="background: rgba(255,255,255,0.5);">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">NGO Partners</h2>
-          <p class="section-subtitle">Verified organizations making real impact across all 17 SDGs</p>
-        </div>
-
-        <div class="grid grid-3">
-          <!-- NGO partners will be added here -->
+    <!-- За корпорациите -->
+    <section class="section" style="background-color: var(--gray-50);">
+      <div class="container" style="max-width: 900px;">
+        <h2 class="section-title">За корпорациите</h2>
+        <p>За бизнеса времето и репутацията са най-ценните активи. ART EUction ви предлага готов инструмент за ESG и CSR принос – проследим, отчетен и вдъхновяващ. С няколко клика вашата компания може да подкрепи артист, културна инициатива или социална кауза и веднага да получи отчет за своя обществен ефект.</p>
+        <ul>
+          <li>дългите процедури по избор на каузи и партньори</li>
+          <li>рисковете от непрозрачност или слаб обществен резултат</li>
+          <li>нуждата да изграждате вътрешен екип за социални кампании</li>
+        </ul>
+        <p><strong>Вашият принос се измерва, документира и разказва чрез силата на изкуството – превръщайки корпоративната отговорност в история, която вдъхновява.</strong></p>
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="corporate-partner.html" class="btn btn-primary btn-lg">Станете корпоративен партньор</a>
         </div>
       </div>
     </section>
 
-    <!-- Corporate Partners -->
+    <!-- За НПО и читалищата -->
     <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Corporate Partners</h2>
-          <p class="section-subtitle">Companies supporting our mission through sponsorships and collaboration</p>
-        </div>
-
-        <div class="grid grid-4">
-          <!-- Corporate partners will be added here -->
+      <div class="container" style="max-width: 900px;">
+        <h2 class="section-title">За НПО и читалищата</h2>
+        <p>Неправителствените организации и културните институции често са гръбнакът на местните общности, но нямат ресурс да поддържат постоянна видимост и финансиране. ART EUction ви помага да се фокусирате върху същинската си мисия – без да губите време в търсене на донори и администриране на дарения.</p>
+        <ul>
+          <li>автоматизирани процеси за кандидатстване и отчетност</li>
+          <li>достъп до нови корпоративни партньори</li>
+          <li>прозрачност и доверие при управлението на средства</li>
+        </ul>
+        <p><strong>Спестяваме ви бюрокрацията и ви връщаме енергията – за реална промяна на местно ниво.</strong></p>
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="ngo-partner.html" class="btn btn-primary btn-lg">Кандидатствайте като организация</a>
         </div>
       </div>
     </section>
 
-    <!-- Become a Partner -->
-    <section class="section" style="background: var(--primary-gradient);">
-      <div class="container">
-        <div class="grid grid-2" style="align-items: center; gap: 3rem;">
-          <div style="color: var(--gray-900);">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Become a Partner</h2>
-            <p style="font-size: 1.125rem; margin-bottom: 1rem; line-height: 1.8;">
-              Join our network of organizations committed to creating positive social impact through art and innovation.
-            </p>
-            <p style="font-size: 1.125rem; margin-bottom: 2rem; line-height: 1.8;">
-              Whether you're an NGO working on SDG initiatives or a corporation looking to support meaningful causes, we'd love to explore partnership opportunities.
-            </p>
-            <a href="team.html" class="btn" style="background: white; color: var(--gray-900); font-weight: 700;">Contact Us</a>
-          </div>
-
-          <div class="card" style="background: white;">
-            <h3 style="margin-bottom: 1.5rem;">Partnership Benefits</h3>
-            <ul style="list-style: none; padding: 0;">
-              <li style="padding: 1rem 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: start; gap: 1rem;">
-                <span style="font-size: 1.5rem;"><�</span>
-                <div>
-                  <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Direct Impact</h4>
-                  <p style="color: var(--gray-600); margin: 0;">Transparent fund allocation to verified projects</p>
-                </div>
-              </li>
-              <li style="padding: 1rem 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: start; gap: 1rem;">
-                <span style="font-size: 1.5rem;"><</span>
-                <div>
-                  <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Global Reach</h4>
-                  <p style="color: var(--gray-600); margin: 0;">Access to international collectors and artists</p>
-                </div>
-              </li>
-              <li style="padding: 1rem 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: start; gap: 1rem;">
-                <span style="font-size: 1.5rem;">=�</span>
-                <div>
-                  <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Impact Analytics</h4>
-                  <p style="color: var(--gray-600); margin: 0;">Real-time tracking and reporting of outcomes</p>
-                </div>
-              </li>
-              <li style="padding: 1rem 0; display: flex; align-items: start; gap: 1rem;">
-                <span style="font-size: 1.5rem;">></span>
-                <div>
-                  <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Brand Visibility</h4>
-                  <p style="color: var(--gray-600); margin: 0;">Recognition across our platform and events</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <!-- Защо всички печелят -->
+    <section class="section" style="background-color: var(--gray-50);">
+      <div class="container" style="max-width: 900px;">
+        <h2 class="section-title">Защо всички печелят</h2>
+        <p>ART EUction е мост между доброто намерение и реалното действие. Ние спестяваме време, усилия и терзания, защото събираме на едно място всичко нужно:</p>
+        <ul>
+          <li>изкуството на творците,</li>
+          <li>ресурсите на бизнеса,</li>
+          <li>опита на социалните организации.</li>
+        </ul>
+        <p><strong>Когато премахнем бариерите, остават само хората – и тяхната способност да създават стойност заедно.</strong></p>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Футър -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>About ART EUction</h4>
-          <p>A revolutionary platform combining art auctions with social impact, supporting the UN's 17 Sustainable Development Goals.</p>
+          <h4>За ART EUction</h4>
+          <p>Иновативна платформа, която свързва изкуството, бизнеса и социалното въздействие чрез Целите за устойчиво развитие на ООН.</p>
         </div>
 
         <div class="footer-section">
-          <h4>Platform</h4>
+          <h4>Платформа</h4>
           <ul class="footer-links">
-            <li><a href="about.html">How It Works</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="sia.html">SIA Dashboard</a></li>
-            <li><a href="sdg/sdg-overview.html">SDG Overview</a></li>
+            <li><a href="about.html">Как работим</a></li>
+            <li><a href="events.html">Събития</a></li>
+            <li><a href="sia.html">ESG Анализи</a></li>
+            <li><a href="sdg/sdg-overview.html">ЦУР</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
-          <h4>For Artists</h4>
+          <h4>За артисти</h4>
           <ul class="footer-links">
-            <li><a href="artist-signup.html">Artist Signup</a></li>
-            <li><a href="artwork-submission.html">Submit Artwork</a></li>
-            <li><a href="#">Artist Guidelines</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="artist-signup.html">Регистрация</a></li>
+            <li><a href="artwork-submission.html">Изпрати творба</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
-          <h4>Legal</h4>
+          <h4>Правна информация</h4>
           <ul class="footer-links">
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="team.html">Contact Us</a></li>
+            <li><a href="#">Условия за ползване</a></li>
+            <li><a href="#">Политика за поверителност</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 ART EUction. All rights reserved. | Art Meets Impact</p>
+        <p>&copy; 2025 ART EUction. Всички права запазени. | Art Meets Impact</p>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript Modules -->
+  <!-- Скриптове -->
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
