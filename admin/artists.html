@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Manage Artists | Admin | ART EUction</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/admin.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="header-container">
+      <a href="/admin/dashboard.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction Admin</span>
+      </a>
+
+      <nav class="admin-nav">
+        <ul class="nav-list">
+          <li><a href="/admin/dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="/admin/artworks.html" class="nav-link">Artworks</a></li>
+          <li><a href="/admin/artists.html" class="nav-link active">Artists</a></li>
+          <li><a href="/index.html" class="nav-link" target="_blank">View Site</a></li>
+        </ul>
+
+        <div class="admin-user-menu">
+          <span class="admin-user-name" id="admin-user-name">Admin</span>
+          <button class="btn btn-outline btn-sm" id="admin-logout-btn">Logout</button>
+        </div>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <div class="admin-container">
+      <!-- Page Header -->
+      <div class="admin-page-header">
+        <h1 class="admin-page-title">Manage Artists</h1>
+        <p class="admin-page-subtitle">Review and approve artist applications</p>
+      </div>
+
+      <!-- Filters -->
+      <section class="admin-section">
+        <div class="admin-filters">
+          <div class="filter-group">
+            <label for="filter-status">Status</label>
+            <select id="filter-status" class="form-control">
+              <option value="all">All Statuses</option>
+              <option value="pending" selected>Pending</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-search">Search</label>
+            <input type="text" id="filter-search" class="form-control" placeholder="Search by name or email...">
+          </div>
+
+          <div class="filter-group">
+            <label>&nbsp;</label>
+            <button id="btn-apply-filters" class="btn btn-primary">Apply Filters</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Artists Table -->
+      <section class="admin-section">
+        <div class="section-header">
+          <h2 class="section-title">Artist Applications</h2>
+          <div>
+            <span id="artists-count" style="color: var(--gray-800); margin-right: 1rem;">0 artists</span>
+          </div>
+        </div>
+
+        <div class="admin-table-container">
+          <div id="loading-artists" class="loading-state">
+            <div class="spinner"></div>
+            <p>Loading artists...</p>
+          </div>
+
+          <table class="admin-table" id="artists-table" style="display: none;">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>SDG Focus</th>
+                <th>Portfolio</th>
+                <th>Status</th>
+                <th>Applied</th>
+                <th style="width: 300px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="artists-table-body">
+              <!-- Populated by JavaScript -->
+            </tbody>
+          </table>
+
+          <div id="no-artists" class="empty-state" style="display: none;">
+            <div class="empty-icon">👨‍🎨</div>
+            <h3>No Artists Found</h3>
+            <p>No artist applications match your current filters.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Artist Detail Modal -->
+  <div id="artist-modal" class="modal" style="display: none;">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
+      <div class="modal-header">
+        <h2 id="modal-title">Artist Details</h2>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="../js/admin-artists.js"></script>
+</body>
+</html>
