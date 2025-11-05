@@ -242,10 +242,22 @@ function initArtworkSubmissionForm() {
 
   form.addEventListener('submit', handleArtworkSubmission);
 
-  // Setup file preview
-  const fileInput = document.getElementById('artwork-image');
-  if (fileInput) {
-    fileInput.addEventListener('change', previewArtworkImage);
+  // Setup file preview for main image
+  const mainImageInput = document.getElementById('main-image');
+  if (mainImageInput) {
+    mainImageInput.addEventListener('change', (e) => previewMainImage(e));
+  }
+
+  // Setup file preview for additional images
+  const additionalImagesInput = document.getElementById('additional-images');
+  if (additionalImagesInput) {
+    additionalImagesInput.addEventListener('change', (e) => previewAdditionalImages(e));
+  }
+
+  // Add character counter for description
+  const descriptionField = document.getElementById('description');
+  if (descriptionField) {
+    descriptionField.addEventListener('input', updateCharacterCount);
   }
 }
 
@@ -255,38 +267,214 @@ function initArtworkSubmissionForm() {
 async function handleArtworkSubmission(e) {
   e.preventDefault();
 
-  const formData = new FormData(e.target);
-  const data = Object.fromEntries(formData.entries());
+  // Disable submit button to prevent double submission
+  const submitButton = e.target.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton.textContent;
+  submitButton.disabled = true;
+  submitButton.textContent = 'Submitting...';
 
-  console.log('Artwork submission data:', data);
+  try {
+    // Validate files
+    const mainImageInput = document.getElementById('main-image');
+    const mainImageFile = mainImageInput?.files?.[0];
 
-  // TODO: Integrate with Supabase
-  // For now, show success message
-  showNotification('Artwork submitted successfully! We will review it shortly.', 'success');
+    if (!mainImageFile) {
+      showNotification('Please select a main artwork image', 'error');
+      return;
+    }
 
-  // Reset form
-  e.target.reset();
+    // Validate file size (10MB max)
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    if (mainImageFile.size > maxSize) {
+      showNotification('Main image must be under 10MB', 'error');
+      return;
+    }
 
-  // Clear image preview
-  const preview = document.getElementById('image-preview');
-  if (preview) preview.innerHTML = '';
+    // Validate file type
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/tiff'];
+    if (!allowedTypes.includes(mainImageFile.type)) {
+      showNotification('Invalid image format. Please use JPG, PNG, WEBP, or TIFF', 'error');
+      return;
+    }
+
+    // Validate additional images if present
+    const additionalImagesInput = document.getElementById('additional-images');
+    const additionalFiles = additionalImagesInput?.files || [];
+
+    for (let i = 0; i < additionalFiles.length; i++) {
+      if (additionalFiles[i].size > maxSize) {
+        showNotification(`Additional image ${i + 1} must be under 10MB`, 'error');
+        return;
+      }
+      if (!allowedTypes.includes(additionalFiles[i].type)) {
+        showNotification(`Additional image ${i + 1} has invalid format`, 'error');
+        return;
+      }
+    }
+
+    // Create FormData object with all form fields
+    const formData = new FormData(e.target);
+
+    // Show uploading notification
+    showNotification('Uploading artwork and images...', 'info');
+
+    // Submit to Netlify function
+    const response = await fetch('/.netlify/functions/submit-artwork', {
+      method: 'POST',
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      showNotification(
+        result.message || 'Artwork submitted successfully! We will review it within 3-5 business days.',
+        'success'
+      );
+
+      // Reset form
+      e.target.reset();
+
+      // Clear image previews
+      clearImagePreviews();
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      showNotification(
+        result.error || 'Failed to submit artwork. Please try again.',
+        'error'
+      );
+    }
+  } catch (error) {
+    console.error('Error submitting artwork:', error);
+    showNotification(
+      'An error occurred while submitting your artwork. Please try again.',
+      'error'
+    );
+  } finally {
+    // Re-enable submit button
+    submitButton.disabled = false;
+    submitButton.textContent = originalButtonText;
+  }
 }
 
 /**
- * Preview artwork image
+ * Preview main artwork image
  */
-function previewArtworkImage(e) {
+function previewMainImage(e) {
   const file = e.target.files[0];
   if (!file) return;
 
-  const preview = document.getElementById('image-preview');
-  if (!preview) return;
+  // Validate file size
+  const maxSize = 10 * 1024 * 1024; // 10MB
+  if (file.size > maxSize) {
+    showNotification('Image must be under 10MB', 'error');
+    e.target.value = '';
+    return;
+  }
+
+  // Create preview container if it doesn't exist
+  let previewContainer = document.getElementById('main-image-preview');
+  if (!previewContainer) {
+    previewContainer = document.createElement('div');
+    previewContainer.id = 'main-image-preview';
+    previewContainer.style.marginTop = '1rem';
+    e.target.parentElement.appendChild(previewContainer);
+  }
 
   const reader = new FileReader();
   reader.onload = function(event) {
-    preview.innerHTML = `<img src="${event.target.result}" alt="Preview" style="max-width: 100%; border-radius: 0.5rem;">`;
+    const fileSize = (file.size / 1024 / 1024).toFixed(2);
+    previewContainer.innerHTML = `
+      <div style="border: 2px solid var(--gray-300); border-radius: 0.5rem; padding: 1rem; background: var(--gray-50);">
+        <img src="${event.target.result}" alt="Preview" style="max-width: 100%; max-height: 400px; border-radius: 0.5rem; margin-bottom: 0.5rem;">
+        <p style="margin: 0; font-size: 0.875rem; color: var(--gray-800);">
+          <strong>${file.name}</strong> (${fileSize} MB)
+        </p>
+      </div>
+    `;
   };
   reader.readAsDataURL(file);
+}
+
+/**
+ * Preview additional artwork images
+ */
+function previewAdditionalImages(e) {
+  const files = Array.from(e.target.files);
+  if (files.length === 0) return;
+
+  // Create preview container if it doesn't exist
+  let previewContainer = document.getElementById('additional-images-preview');
+  if (!previewContainer) {
+    previewContainer = document.createElement('div');
+    previewContainer.id = 'additional-images-preview';
+    previewContainer.style.marginTop = '1rem';
+    e.target.parentElement.appendChild(previewContainer);
+  }
+
+  previewContainer.innerHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;"></div>';
+  const grid = previewContainer.querySelector('div');
+
+  files.forEach((file, index) => {
+    // Validate file size
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    if (file.size > maxSize) {
+      showNotification(`Image ${index + 1} is over 10MB and will be skipped`, 'warning');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const fileSize = (file.size / 1024 / 1024).toFixed(2);
+      const previewItem = document.createElement('div');
+      previewItem.style.cssText = 'border: 2px solid var(--gray-300); border-radius: 0.5rem; padding: 0.5rem; background: var(--gray-50);';
+      previewItem.innerHTML = `
+        <img src="${event.target.result}" alt="Preview ${index + 1}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.5rem; margin-bottom: 0.5rem;">
+        <p style="margin: 0; font-size: 0.75rem; color: var(--gray-800); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+          ${file.name} (${fileSize} MB)
+        </p>
+      `;
+      grid.appendChild(previewItem);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/**
+ * Clear all image previews
+ */
+function clearImagePreviews() {
+  const mainPreview = document.getElementById('main-image-preview');
+  if (mainPreview) mainPreview.remove();
+
+  const additionalPreview = document.getElementById('additional-images-preview');
+  if (additionalPreview) additionalPreview.remove();
+}
+
+/**
+ * Update character count for description field
+ */
+function updateCharacterCount(e) {
+  const maxLength = 500;
+  const currentLength = e.target.value.length;
+
+  let counter = e.target.parentElement.querySelector('.character-counter');
+  if (!counter) {
+    counter = document.createElement('p');
+    counter.className = 'character-counter';
+    counter.style.cssText = 'font-size: 0.875rem; color: var(--gray-500); margin-top: 0.5rem;';
+    e.target.parentElement.appendChild(counter);
+  }
+
+  counter.textContent = `${currentLength} / ${maxLength} characters`;
+
+  if (currentLength > maxLength) {
+    counter.style.color = 'var(--error-red)';
+  } else {
+    counter.style.color = 'var(--gray-500)';
+  }
 }
 
 /**
