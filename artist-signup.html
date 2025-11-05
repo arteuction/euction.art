@@ -225,19 +225,62 @@
   </footer>
 
   <script type="module" src="js/main.js"></script>
-  <script>
-    // Simple form validation
-    document.getElementById('artist-signup-form').addEventListener('submit', function(e) {
+  <script type="module">
+    import { showNotification } from './js/utils.js';
+
+    // Form submission handler
+    document.getElementById('artist-signup-form').addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const sdgCheckboxes = document.querySelectorAll('input[name="sdg"]:checked');
       if (sdgCheckboxes.length === 0 || sdgCheckboxes.length > 3) {
-        alert('Моля, изберете между 1 и 3 ЦУР.');
+        showNotification('Моля, изберете между 1 и 3 ЦУР.', 'error');
         return;
       }
 
-      alert('Благодарим! Вашата заявка е изпратена успешно. Ще се свържем с вас скоро.');
-      this.reset();
+      // Get form data
+      const formData = {
+        name: document.getElementById('full-name').value,
+        email: document.getElementById('email').value,
+        bio: document.getElementById('bio').value,
+        portfolio_url: document.getElementById('portfolio-url').value,
+        sdg_tags: Array.from(sdgCheckboxes).map(cb => `ЦУР ${cb.value}`),
+        location: document.getElementById('location').value,
+        artist_name: document.getElementById('artist-name').value,
+        art_category: document.getElementById('art-category').value
+      };
+
+      // Disable submit button
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Изпращане...';
+
+      try {
+        // Submit to Netlify function
+        const response = await fetch('/.netlify/functions/submit-artist', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          showNotification('Благодарим! Вашата заявка е изпратена успешно. Ще се свържем с вас скоро.', 'success');
+          this.reset();
+        } else {
+          throw new Error(result.error || 'Неуспешно изпращане на заявката');
+        }
+      } catch (error) {
+        console.error('Error submitting artist application:', error);
+        showNotification('Грешка при изпращане: ' + error.message, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
     });
   </script>
 </body>
