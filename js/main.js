@@ -5,7 +5,7 @@
 
 import { initNavigation, setupAnnouncementBar } from './navigation.js';
 import { initAnimations } from './animations.js';
-import { PLATFORM_STATS, formatCurrency } from './data.js';
+import { formatCurrency } from './data.js';
 import { showNotification } from './utils.js';
 import { initAuthUI } from './auth.js';
 
@@ -121,27 +121,11 @@ function initSDGPage() {
 
 /**
  * Update stats counters on homepage
+ * Stats will be loaded from Supabase in the future
  */
 function updateStatsCounters() {
-  const statsElements = {
-    artworks: document.getElementById('stat-artworks'),
-    artists: document.getElementById('stat-artists'),
-    ngos: document.getElementById('stat-ngos'),
-    funds: document.getElementById('stat-funds')
-  };
-
-  if (statsElements.artworks) {
-    statsElements.artworks.dataset.counter = PLATFORM_STATS.totalArtworks;
-  }
-  if (statsElements.artists) {
-    statsElements.artists.dataset.counter = PLATFORM_STATS.totalArtists;
-  }
-  if (statsElements.ngos) {
-    statsElements.ngos.dataset.counter = PLATFORM_STATS.totalNGOs;
-  }
-  if (statsElements.funds) {
-    statsElements.funds.textContent = formatCurrency(PLATFORM_STATS.fundsRaised);
-  }
+  // TODO: Fetch real stats from Supabase
+  console.log('Stats counters will be updated when Supabase integration is complete');
 }
 
 /**
