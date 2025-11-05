@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Dashboard | ART EUction</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .dashboard-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .stat-card { background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--gray-200); }
+    .stat-card .number { font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); margin: 0; }
+    .stat-card .label { color: var(--gray-800); font-size: 0.875rem; margin-top: 0.5rem; }
+    .section-card { background: white; padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--gray-200); margin-bottom: 2rem; }
+    table { width: 100%; border-collapse: collapse; }
+    table th { text-align: left; padding: 0.75rem; background: var(--gray-50); font-weight: 600; font-size: 0.875rem; border-bottom: 2px solid var(--gray-200); }
+    table td { padding: 0.75rem; border-bottom: 1px solid var(--gray-100); }
+    table tr:hover { background: var(--gray-50); }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="ngo-dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <div style="margin-bottom: 3rem;">
+      <h1>NGO Dashboard</h1>
+      <p style="color: var(--gray-800);">Welcome, <span id="ngo-name">Organization</span></p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <p class="number" id="total-donations">$0</p>
+        <p class="label">Total Donations Received</p>
+      </div>
+      <div class="stat-card">
+        <p class="number" id="auction-count">0</p>
+        <p class="label">Auctions Benefited From</p>
+      </div>
+      <div class="stat-card">
+        <p class="number" id="pending-payouts">$0</p>
+        <p class="label">Pending Payouts</p>
+      </div>
+      <div class="stat-card">
+        <p class="number" id="artworks-count">0</p>
+        <p class="label">Artworks Supporting Your Cause</p>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 style="margin: 0 0 1.5rem 0;">Recent Donations</h2>
+      <table id="donations-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Artwork</th>
+            <th>Final Bid</th>
+            <th>Your Share (75-80%)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5" style="text-align: center; padding: 2rem; color: var(--gray-500);">
+              Loading donations...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-card">
+      <h2 style="margin: 0 0 1.5rem 0;">Impact Report</h2>
+      <p style="color: var(--gray-800); margin-bottom: 1rem;">Share your impact with supporters:</p>
+      <button class="btn btn-primary" onclick="window.location.href='ngo-impact-report.html'">Create Impact Report</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/ngo-dashboard.js"></script>
+</body>
+</html>

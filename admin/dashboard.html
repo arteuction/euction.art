@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | ART EUction</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .admin-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      min-height: 100vh;
+      background: var(--gray-50);
+    }
+
+    .admin-sidebar {
+      background: var(--gray-900);
+      color: white;
+      padding: 2rem 0;
+      position: fixed;
+      width: 250px;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .admin-sidebar h2 {
+      color: white;
+      padding: 0 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .admin-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .admin-nav li {
+      margin: 0;
+    }
+
+    .admin-nav a {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      color: var(--gray-300);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .admin-nav a:hover,
+    .admin-nav a.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .admin-nav a .icon {
+      margin-right: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .admin-content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+
+    .admin-header {
+      background: white;
+      padding: 1.5rem 2rem;
+      margin: -2rem -2rem 2rem -2rem;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--gray-200);
+    }
+
+    .stat-card h3 {
+      font-size: 0.875rem;
+      color: var(--gray-800);
+      margin: 0 0 0.5rem 0;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin: 0;
+    }
+
+    .stat-card .change {
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+    }
+
+    .change.positive {
+      color: var(--success-green);
+    }
+
+    .change.negative {
+      color: var(--error-red);
+    }
+
+    .section-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--gray-200);
+      margin-bottom: 2rem;
+    }
+
+    .section-card h2 {
+      margin: 0 0 1.5rem 0;
+      font-size: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th {
+      text-align: left;
+      padding: 0.75rem;
+      background: var(--gray-50);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--gray-800);
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    table tr:hover {
+      background: var(--gray-50);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .status-badge.pending {
+      background: #FFF3CD;
+      color: #856404;
+    }
+
+    .status-badge.approved {
+      background: #D4EDDA;
+      color: #155724;
+    }
+
+    .status-badge.rejected {
+      background: #F8D7DA;
+      color: #721C24;
+    }
+
+    .status-badge.active {
+      background: #D1ECF1;
+      color: #0C5460;
+    }
+
+    .action-btn {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      background: var(--accent-cyan);
+      color: white;
+      margin-right: 0.5rem;
+    }
+
+    .action-btn:hover {
+      opacity: 0.9;
+    }
+
+    .action-btn.danger {
+      background: var(--error-red);
+    }
+
+    @media (max-width: 768px) {
+      .admin-container {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+
+      .admin-content {
+        margin-left: 0;
+      }
+    }
+  </style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+</head>
+<body>
+
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <h2>🎨 Admin Panel</h2>
+      <ul class="admin-nav">
+        <li><a href="dashboard.html" class="active"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="artists.html"><span class="icon">👨‍🎨</span> Artists</a></li>
+        <li><a href="artworks.html"><span class="icon">🖼️</span> Artworks</a></li>
+        <li><a href="auctions.html"><span class="icon">⚡</span> Auctions</a></li>
+        <li><a href="ngos.html"><span class="icon">🤝</span> NGOs</a></li>
+        <li><a href="users.html"><span class="icon">👥</span> Users</a></li>
+        <li><a href="analytics.html"><span class="icon">📈</span> Analytics</a></li>
+        <li><a href="../index.html"><span class="icon">🏠</span> Back to Site</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+      <div class="admin-header">
+        <div>
+          <h1 style="margin: 0;">Dashboard</h1>
+          <p style="color: var(--gray-800); margin: 0.25rem 0 0 0;">Welcome back, Admin</p>
+        </div>
+        <div>
+          <span id="current-date"></span>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Pending Submissions</h3>
+          <p class="value" id="pending-submissions">-</p>
+          <p class="change">Awaiting review</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Active Auctions</h3>
+          <p class="value" id="active-auctions">-</p>
+          <p class="change positive">↑ 12% this week</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Total Artists</h3>
+          <p class="value" id="total-artists">-</p>
+          <p class="change positive">↑ 5 new this month</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Total Revenue</h3>
+          <p class="value" id="total-revenue">$-</p>
+          <p class="change positive">↑ 23% this month</p>
+        </div>
+      </div>
+
+      <!-- Recent Artwork Submissions -->
+      <div class="section-card">
+        <h2>Recent Artwork Submissions</h2>
+        <table id="recent-artworks">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>SDG</th>
+              <th>Submitted</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6" style="text-align: center; padding: 2rem; color: var(--gray-500);">
+                Loading...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recent Artist Applications -->
+      <div class="section-card">
+        <h2>Recent Artist Applications</h2>
+        <table id="recent-artists">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Applied</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5" style="text-align: center; padding: 2rem; color: var(--gray-500);">
+                Loading...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module" src="../js/admin.js"></script>
+  <script>
+    // Update current date
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+  </script>
+</body>
+</html>

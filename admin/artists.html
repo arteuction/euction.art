@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artists Management | ART EUction Admin</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .admin-container { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; background: var(--gray-50); }
+    .admin-sidebar { background: var(--gray-900); color: white; padding: 2rem 0; position: fixed; width: 250px; height: 100vh; overflow-y: auto; }
+    .admin-sidebar h2 { color: white; padding: 0 1.5rem; margin-bottom: 2rem; font-size: 1.5rem; }
+    .admin-nav { list-style: none; padding: 0; margin: 0; }
+    .admin-nav li { margin: 0; }
+    .admin-nav a { display: flex; align-items: center; padding: 1rem 1.5rem; color: var(--gray-300); text-decoration: none; transition: all 0.2s; }
+    .admin-nav a:hover, .admin-nav a.active { background: rgba(255, 255, 255, 0.1); color: white; }
+    .admin-nav a .icon { margin-right: 0.75rem; font-size: 1.25rem; }
+    .admin-content { margin-left: 250px; padding: 2rem; }
+    .admin-header { background: white; padding: 1.5rem 2rem; margin: -2rem -2rem 2rem -2rem; border-bottom: 1px solid var(--gray-200); }
+    .section-card { background: white; padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--gray-200); margin-bottom: 2rem; }
+    .filters { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .filter-btn { padding: 0.5rem 1rem; border: 1px solid var(--gray-300); background: white; border-radius: 0.25rem; cursor: pointer; }
+    .filter-btn.active { background: var(--accent-cyan); color: white; border-color: var(--accent-cyan); }
+    table { width: 100%; border-collapse: collapse; }
+    table th { text-align: left; padding: 0.75rem; background: var(--gray-50); font-weight: 600; font-size: 0.875rem; color: var(--gray-800); border-bottom: 2px solid var(--gray-200); }
+    table td { padding: 0.75rem; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
+    table tr:hover { background: var(--gray-50); }
+    .status-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .status-badge.pending { background: #FFF3CD; color: #856404; }
+    .status-badge.approved { background: #D4EDDA; color: #155724; }
+    .status-badge.rejected { background: #F8D7DA; color: #721C24; }
+    .action-btn { padding: 0.375rem 0.75rem; font-size: 0.875rem; border: none; border-radius: 0.25rem; cursor: pointer; margin-right: 0.5rem; }
+    .action-btn.approve { background: var(--success-green); color: white; }
+    .action-btn.reject { background: var(--error-red); color: white; }
+    .action-btn.view { background: var(--accent-cyan); color: white; }
+    .action-btn:hover { opacity: 0.9; }
+    .artist-details { margin-top: 0.5rem; font-size: 0.875rem; color: var(--gray-800); }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; }
+    .modal.active { display: flex; align-items: center; justify-content: center; }
+    .modal-content { background: white; padding: 2rem; border-radius: 0.5rem; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+</head>
+<body>
+
+  <div class="admin-container">
+    <aside class="admin-sidebar">
+      <h2>🎨 Admin Panel</h2>
+      <ul class="admin-nav">
+        <li><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="artists.html" class="active"><span class="icon">👨‍🎨</span> Artists</a></li>
+        <li><a href="artworks.html"><span class="icon">🖼️</span> Artworks</a></li>
+        <li><a href="auctions.html"><span class="icon">⚡</span> Auctions</a></li>
+        <li><a href="ngos.html"><span class="icon">🤝</span> NGOs</a></li>
+        <li><a href="users.html"><span class="icon">👥</span> Users</a></li>
+        <li><a href="analytics.html"><span class="icon">📈</span> Analytics</a></li>
+        <li><a href="../index.html"><span class="icon">🏠</span> Back to Site</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-content">
+      <div class="admin-header">
+        <h1 style="margin: 0;">Artist Applications</h1>
+      </div>
+
+      <div class="section-card">
+        <div class="filters">
+          <button class="filter-btn active" data-status="all">All Artists</button>
+          <button class="filter-btn" data-status="pending">Pending</button>
+          <button class="filter-btn" data-status="approved">Approved</button>
+          <button class="filter-btn" data-status="rejected">Rejected</button>
+        </div>
+
+        <table id="artists-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Location</th>
+              <th>Applied Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6" style="text-align: center; padding: 2rem; color: var(--gray-500);">
+                Loading artists...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Artist Details Modal -->
+  <div class="modal" id="artist-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Artist Details</h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div id="modal-body">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../js/admin-artists.js"></script>
+</body>
+</html>

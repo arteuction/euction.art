@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Registration | ART EUction</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="sdg/sdg-overview.html" class="nav-link">SDGs</a></li>
+          <li><a href="partners.html" class="nav-link">Partners</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero" style="padding: 4rem 0;">
+      <div class="container">
+        <h1 class="hero-title">NGO Registration</h1>
+        <p class="hero-subtitle">Partner with us to receive funding from art auctions</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 900px;">
+        <div class="card">
+          <form id="ngo-registration-form">
+            <h3 style="margin-bottom: 1.5rem;">Organization Information</h3>
+
+            <div class="form-group">
+              <label class="form-label">Organization Name *</label>
+              <input type="text" name="name" class="form-control" required>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" name="phone" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Website URL *</label>
+              <input type="url" name="website" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Organization Description *</label>
+              <textarea name="description" class="form-control" required style="min-height: 120px;" placeholder="Tell us about your organization's mission and impact"></textarea>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Country *</label>
+                <input type="text" name="country" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Registration Number *</label>
+                <input type="text" name="registration_number" class="form-control" required placeholder="Official NGO registration number">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Primary SDG Focus *</label>
+              <select name="primary_sdg" class="form-control" required>
+                <option value="">Select your primary SDG</option>
+                <option value="1">SDG 1: No Poverty</option>
+                <option value="2">SDG 2: Zero Hunger</option>
+                <option value="3">SDG 3: Good Health and Well-being</option>
+                <option value="4">SDG 4: Quality Education</option>
+                <option value="5">SDG 5: Gender Equality</option>
+                <option value="6">SDG 6: Clean Water and Sanitation</option>
+                <option value="7">SDG 7: Affordable and Clean Energy</option>
+                <option value="8">SDG 8: Decent Work and Economic Growth</option>
+                <option value="9">SDG 9: Industry, Innovation and Infrastructure</option>
+                <option value="10">SDG 10: Reduced Inequalities</option>
+                <option value="11">SDG 11: Sustainable Cities and Communities</option>
+                <option value="12">SDG 12: Responsible Consumption and Production</option>
+                <option value="13">SDG 13: Climate Action</option>
+                <option value="14">SDG 14: Life Below Water</option>
+                <option value="15">SDG 15: Life on Land</option>
+                <option value="16">SDG 16: Peace, Justice and Strong Institutions</option>
+                <option value="17">SDG 17: Partnerships for the Goals</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Impact Statement *</label>
+              <textarea name="impact_statement" class="form-control" required style="min-height: 120px;" placeholder="Describe the impact your organization has made (include metrics if possible)"></textarea>
+            </div>
+
+            <h3 style="margin: 2rem 0 1.5rem 0;">Verification Documents</h3>
+
+            <div class="form-group">
+              <label class="form-label">Upload Registration Certificate *</label>
+              <input type="file" name="certificate" class="form-control" required accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Upload Tax Exemption Document</label>
+              <input type="file" name="tax_document" class="form-control" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <h3 style="margin: 2rem 0 1.5rem 0;">Banking Information</h3>
+
+            <div class="form-group">
+              <label class="form-label">Bank Name *</label>
+              <input type="text" name="bank_name" class="form-control" required>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Account Number *</label>
+                <input type="text" name="account_number" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">SWIFT/BIC Code</label>
+                <input type="text" name="swift_code" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label style="display: flex; align-items: start; gap: 0.75rem; cursor: pointer;">
+                <input type="checkbox" name="terms" required style="width: 18px; height: 18px; margin-top: 0.25rem;">
+                <span>I confirm that all information provided is accurate and that our organization is a legally registered non-profit entity. *</span>
+              </label>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Registration</button>
+              <p style="text-align: center; margin-top: 1rem; color: var(--gray-800); font-size: 0.875rem;">
+                We'll review your application within 5-7 business days
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/ngo-registration.js"></script>
+</body>
+</html>

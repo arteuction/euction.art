@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Dashboard | ART EUction</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .dashboard-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .dashboard-header { margin-bottom: 3rem; }
+    .dashboard-header h1 { margin: 0 0 0.5rem 0; }
+    .dashboard-header p { color: var(--gray-800); margin: 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .stat-card { background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--gray-200); text-align: center; }
+    .stat-card .number { font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); margin: 0; }
+    .stat-card .label { color: var(--gray-800); font-size: 0.875rem; margin-top: 0.5rem; }
+    .section-card { background: white; padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--gray-200); margin-bottom: 2rem; }
+    .section-card h2 { margin: 0 0 1.5rem 0; }
+    .submissions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .submission-card { border: 1px solid var(--gray-200); border-radius: 0.5rem; overflow: hidden; transition: transform 0.2s; }
+    .submission-card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .submission-image { width: 100%; height: 180px; object-fit: cover; background: var(--gray-100); }
+    .submission-details { padding: 1rem; }
+    .submission-title { font-weight: 700; margin: 0 0 0.5rem 0; }
+    .submission-meta { font-size: 0.875rem; color: var(--gray-800); margin: 0.25rem 0; }
+    .status-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; margin-top: 0.5rem; }
+    .status-badge.pending { background: #FFF3CD; color: #856404; }
+    .status-badge.approved { background: #D4EDDA; color: #155724; }
+    .status-badge.rejected { background: #F8D7DA; color: #721C24; }
+    .empty-state { text-align: center; padding: 3rem; color: var(--gray-500); }
+    .empty-state .icon { font-size: 4rem; margin-bottom: 1rem; }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="sdg/sdg-overview.html" class="nav-link">SDGs</a></li>
+          <li><a href="partners.html" class="nav-link">Partners</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="artwork-submission.html" class="btn btn-primary btn-sm">Submit Art</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Dashboard Content -->
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>Artist Dashboard</h1>
+      <p>Welcome back, <span id="artist-name">Artist</span>!</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <p class="number" id="total-submissions">0</p>
+        <p class="label">Total Submissions</p>
+      </div>
+      <div class="stat-card">
+        <p class="number" id="approved-count">0</p>
+        <p class="label">Approved</p>
+      </div>
+      <div class="stat-card">
+        <p class="number" id="pending-count">0</p>
+        <p class="label">Pending Review</p>
+      </div>
+      <div class="stat-card">
+        <p class="number" id="total-earnings">$0</p>
+        <p class="label">Total Earnings</p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-bottom: 2rem; display: flex; gap: 1rem;">
+      <a href="artwork-submission.html" class="btn btn-primary">+ Submit New Artwork</a>
+      <a href="artist-profile.html" class="btn btn-secondary">Edit Profile</a>
+    </div>
+
+    <!-- Submissions List -->
+    <div class="section-card">
+      <h2>Your Submissions</h2>
+      <div class="submissions-grid" id="submissions-grid">
+        <div class="empty-state">
+          <div class="icon">🎨</div>
+          <p>Loading your submissions...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auction History -->
+    <div class="section-card">
+      <h2>Auction History</h2>
+      <div id="auction-history">
+        <p style="color: var(--gray-500); text-align: center; padding: 2rem;">No completed auctions yet</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About ART EUction</h4>
+          <p>A revolutionary platform combining art auctions with social impact, supporting the UN's 17 Sustainable Development Goals.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">How It Works</a></li>
+            <li><a href="sdg/sdg-overview.html">SDG Overview</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>For Artists</h4>
+          <ul class="footer-links">
+            <li><a href="artist-signup.html">Artist Signup</a></li>
+            <li><a href="artwork-submission.html">Submit Artwork</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/artist-dashboard.js"></script>
+</body>
+</html>
