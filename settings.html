@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Настройки на профил - ART EUction">
+  <meta name="keywords" content="настройки, профил, ART EUction">
+  <title>Настройки | ART EUction</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+  <style>
+    .settings-section {
+      padding: 4rem 0;
+      min-height: 70vh;
+    }
+
+    .settings-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .settings-header {
+      margin-bottom: 2rem;
+    }
+
+    .settings-header h1 {
+      color: #667eea;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .settings-header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .settings-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    .settings-card h2 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #f5f5f5;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-help {
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 0.25rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: #f5f5f5;
+      color: #666;
+    }
+
+    .btn-secondary:hover {
+      background: #e0e0e0;
+    }
+
+    .loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+      font-size: 1.2rem;
+      color: #667eea;
+    }
+
+    .error-message {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: #e74c3c;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .alert-info {
+      background: #e3f2fd;
+      color: #1976d2;
+      border: 1px solid #bbdefb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Начало</a></li>
+          <li><a href="about.html" class="nav-link">Нашата мисия</a></li>
+          <li><a href="sdg/sdg-overview.html" class="nav-link">ЦУР</a></li>
+          <li><a href="partners.html" class="nav-link">Вашата полза</a></li>
+        </ul>
+
+        <div class="auth-buttons nav-cta">
+          <a href="login.html" class="btn btn-outline btn-sm">Вход</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Регистрация</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="section settings-section">
+      <div class="container">
+        <div class="settings-container" id="settings-content">
+          <div class="loading-container">
+            Зареждане на настройките...
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>За ART EUction</h4>
+          <p>Революционна платформа, комбинираща художествени аукциони със социално въздействие, подкрепяща 17-те Цели за устойчиво развитие на ООН.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Платформа</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Как работи</a></li>
+            <li><a href="sdg/sdg-overview.html">Преглед на ЦУР</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Стани Будител!</h4>
+          <ul class="footer-links">
+            <li><a href="artist-signup.html">Стани Будител!</a></li>
+            <li><a href="artwork-submission.html">Изпратете творба</a></li>
+            <li><a href="#">Насоки за художници</a></li>
+            <li><a href="#">ЧЗВ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Правна информация</h4>
+          <ul class="footer-links">
+            <li><a href="#">Условия за ползване</a></li>
+            <li><a href="#">Политика за поверителност</a></li>
+            <li><a href="#">Политика за бисквитки</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. Всички права запазени. | Изкуството среща въздействието</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script type="module">
+    import { requireArtist, getCurrentUser } from './js/auth.js';
+    import { showNotification } from './js/utils.js';
+    import { initNavigation } from './js/navigation.js';
+    import { config } from './js/config.js';
+
+    // Initialize navigation
+    initNavigation();
+
+    // Check if user is an approved artist
+    await requireArtist();
+
+    let supabase = null;
+    let artistData = null;
+
+    // Load settings
+    async function loadSettings() {
+      try {
+        const user = await getCurrentUser();
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        // Initialize Supabase
+        if (!window.supabase) {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+          document.head.appendChild(script);
+          await new Promise((resolve) => { script.onload = resolve; });
+        }
+
+        supabase = window.supabase.createClient(config.supabase.url, config.supabase.anonKey);
+
+        // Fetch artist data from database
+        const { data, error } = await supabase
+          .from('Artists')
+          .select('*')
+          .eq('email', user.email)
+          .eq('status', 'approved')
+          .single();
+
+        if (error) throw error;
+
+        artistData = data;
+
+        // Display settings form
+        displaySettings(user, data);
+
+      } catch (error) {
+        console.error('Error loading settings:', error);
+        document.getElementById('settings-content').innerHTML = `
+          <div class="error-message">
+            <h2>Грешка при зареждане на настройките</h2>
+            <p>${error.message}</p>
+            <a href="index.html" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">Към начална страница</a>
+          </div>
+        `;
+      }
+    }
+
+    function displaySettings(user, data) {
+      const settingsHTML = `
+        <div class="settings-header">
+          <h1>Настройки на профила</h1>
+          <p>Управлявайте информацията за вашия художествен профил</p>
+        </div>
+
+        <form id="settings-form">
+          <div class="settings-card">
+            <h2>Основна информация</h2>
+
+            <div class="form-group">
+              <label for="name" class="form-label">Име *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                value="${data.name || ''}"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Имейл</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                value="${user.email}"
+                disabled
+              >
+              <p class="form-help">Имейлът не може да бъде променен</p>
+            </div>
+
+            <div class="form-group">
+              <label for="bio" class="form-label">Биография *</label>
+              <textarea
+                id="bio"
+                name="bio"
+                class="form-textarea"
+                required
+              >${data.bio || ''}</textarea>
+              <p class="form-help">Разкажете за себе си и вашето изкуство</p>
+            </div>
+
+            <div class="form-group">
+              <label for="portfolio_url" class="form-label">URL на портфолио *</label>
+              <input
+                type="url"
+                id="portfolio_url"
+                name="portfolio_url"
+                class="form-input"
+                value="${data.portfolio_url || ''}"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h2>Социални мрежи</h2>
+
+            <div class="form-group">
+              <label for="facebook_url" class="form-label">Facebook</label>
+              <input
+                type="url"
+                id="facebook_url"
+                name="facebook_url"
+                class="form-input"
+                value="${data.facebook_url || ''}"
+                placeholder="https://facebook.com/yourprofile"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="instagram_url" class="form-label">Instagram</label>
+              <input
+                type="url"
+                id="instagram_url"
+                name="instagram_url"
+                class="form-input"
+                value="${data.instagram_url || ''}"
+                placeholder="https://instagram.com/yourprofile"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="youtube_url" class="form-label">YouTube</label>
+              <input
+                type="url"
+                id="youtube_url"
+                name="youtube_url"
+                class="form-input"
+                value="${data.youtube_url || ''}"
+                placeholder="https://youtube.com/@yourprofile"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="tiktok_url" class="form-label">TikTok</label>
+              <input
+                type="url"
+                id="tiktok_url"
+                name="tiktok_url"
+                class="form-input"
+                value="${data.tiktok_url || ''}"
+                placeholder="https://tiktok.com/@yourprofile"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="pinterest_url" class="form-label">Pinterest</label>
+              <input
+                type="url"
+                id="pinterest_url"
+                name="pinterest_url"
+                class="form-input"
+                value="${data.pinterest_url || ''}"
+                placeholder="https://pinterest.com/yourprofile"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="linkedin_url" class="form-label">LinkedIn</label>
+              <input
+                type="url"
+                id="linkedin_url"
+                name="linkedin_url"
+                class="form-input"
+                value="${data.linkedin_url || ''}"
+                placeholder="https://linkedin.com/in/yourprofile"
+              >
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='profile.html'">
+              Отказ
+            </button>
+            <button type="submit" class="btn btn-primary" id="save-btn">
+              Запази промените
+            </button>
+          </div>
+        </form>
+      `;
+
+      document.getElementById('settings-content').innerHTML = settingsHTML;
+
+      // Setup form submission
+      const form = document.getElementById('settings-form');
+      form.addEventListener('submit', handleSubmit);
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+
+      const saveBtn = document.getElementById('save-btn');
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Записване...';
+
+      try {
+        const formData = {
+          name: document.getElementById('name').value,
+          bio: document.getElementById('bio').value,
+          portfolio_url: document.getElementById('portfolio_url').value,
+          facebook_url: document.getElementById('facebook_url').value || null,
+          instagram_url: document.getElementById('instagram_url').value || null,
+          youtube_url: document.getElementById('youtube_url').value || null,
+          tiktok_url: document.getElementById('tiktok_url').value || null,
+          pinterest_url: document.getElementById('pinterest_url').value || null,
+          linkedin_url: document.getElementById('linkedin_url').value || null,
+        };
+
+        const user = await getCurrentUser();
+
+        // Update artist data in database
+        const { error } = await supabase
+          .from('Artists')
+          .update(formData)
+          .eq('email', user.email)
+          .eq('status', 'approved');
+
+        if (error) throw error;
+
+        showNotification('Профилът е актуализиран успешно!', 'success');
+
+        // Redirect to profile page after a short delay
+        setTimeout(() => {
+          window.location.href = 'profile.html';
+        }, 1500);
+
+      } catch (error) {
+        console.error('Error updating profile:', error);
+        showNotification('Грешка при актуализиране: ' + error.message, 'error');
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Запази промените';
+      }
+    }
+
+    // Load settings on page load
+    loadSettings();
+  </script>
+</body>
+</html>

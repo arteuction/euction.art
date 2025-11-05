@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Профил на художник - ART EUction">
+  <meta name="keywords" content="профил, художник, ART EUction">
+  <title>Моят Профил | ART EUction</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+  <style>
+    .profile-section {
+      padding: 4rem 0;
+      min-height: 70vh;
+    }
+
+    .profile-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .profile-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .profile-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: white;
+      color: #667eea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0 auto 1rem;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .profile-name {
+      font-size: 2rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .profile-email {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    .profile-card h2 {
+      color: #667eea;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .profile-info {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #333;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-value {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .sdg-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .sdg-tag {
+      background: #667eea;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #f5f5f5;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #667eea;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+      font-size: 1.2rem;
+      color: #667eea;
+    }
+
+    .error-message {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">AE</div>
+        <span class="logo-text">ART EUction</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Начало</a></li>
+          <li><a href="about.html" class="nav-link">Нашата мисия</a></li>
+          <li><a href="sdg/sdg-overview.html" class="nav-link">ЦУР</a></li>
+          <li><a href="partners.html" class="nav-link">Вашата полза</a></li>
+        </ul>
+
+        <div class="auth-buttons nav-cta">
+          <a href="login.html" class="btn btn-outline btn-sm">Вход</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Регистрация</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="section profile-section">
+      <div class="container">
+        <div class="profile-container" id="profile-content">
+          <div class="loading-container">
+            Зареждане на профила...
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>За ART EUction</h4>
+          <p>Революционна платформа, комбинираща художествени аукциони със социално въздействие, подкрепяща 17-те Цели за устойчиво развитие на ООН.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Платформа</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Как работи</a></li>
+            <li><a href="sdg/sdg-overview.html">Преглед на ЦУР</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Стани Будител!</h4>
+          <ul class="footer-links">
+            <li><a href="artist-signup.html">Стани Будител!</a></li>
+            <li><a href="artwork-submission.html">Изпратете творба</a></li>
+            <li><a href="#">Насоки за художници</a></li>
+            <li><a href="#">ЧЗВ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Правна информация</h4>
+          <ul class="footer-links">
+            <li><a href="#">Условия за ползване</a></li>
+            <li><a href="#">Политика за поверителност</a></li>
+            <li><a href="#">Политика за бисквитки</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 ART EUction. Всички права запазени. | Изкуството среща въздействието</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script type="module">
+    import { requireArtist, getCurrentUser, isArtist } from './js/auth.js';
+    import { showNotification } from './js/utils.js';
+    import { initNavigation } from './js/navigation.js';
+    import { config } from './js/config.js';
+
+    // Initialize navigation
+    initNavigation();
+
+    // Check if user is an approved artist
+    await requireArtist();
+
+    // Load artist profile
+    async function loadProfile() {
+      try {
+        const user = await getCurrentUser();
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        // Initialize Supabase
+        if (!window.supabase) {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+          document.head.appendChild(script);
+          await new Promise((resolve) => { script.onload = resolve; });
+        }
+
+        const supabase = window.supabase.createClient(config.supabase.url, config.supabase.anonKey);
+
+        // Fetch artist data from database
+        const { data, error } = await supabase
+          .from('Artists')
+          .select('*')
+          .eq('email', user.email)
+          .eq('status', 'approved')
+          .single();
+
+        if (error) throw error;
+
+        // Display profile
+        displayProfile(user, data);
+
+      } catch (error) {
+        console.error('Error loading profile:', error);
+        document.getElementById('profile-content').innerHTML = `
+          <div class="error-message">
+            <h2>Грешка при зареждане на профила</h2>
+            <p>${error.message}</p>
+            <a href="index.html" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">Към начална страница</a>
+          </div>
+        `;
+      }
+    }
+
+    function displayProfile(user, artistData) {
+      const initials = getInitials(artistData.name || user.email);
+
+      const profileHTML = `
+        <div class="profile-header">
+          <div class="profile-avatar">${initials}</div>
+          <h1 class="profile-name">${artistData.name}</h1>
+          <p class="profile-email">${user.email}</p>
+        </div>
+
+        <div class="profile-card">
+          <h2>За мен</h2>
+          <div class="profile-info">
+            <div class="info-item">
+              <span class="info-label">Биография</span>
+              <p class="info-value">${artistData.bio || 'Няма добавена биография'}</p>
+            </div>
+
+            ${artistData.portfolio_url ? `
+            <div class="info-item">
+              <span class="info-label">Портфолио</span>
+              <a href="${artistData.portfolio_url}" target="_blank" class="info-value" style="color: #667eea; text-decoration: underline;">${artistData.portfolio_url}</a>
+            </div>
+            ` : ''}
+
+            ${artistData.sdg_tags && artistData.sdg_tags.length > 0 ? `
+            <div class="info-item">
+              <span class="info-label">ЦУР Тагове</span>
+              <div class="sdg-tags">
+                ${artistData.sdg_tags.map(tag => `<span class="sdg-tag">${tag}</span>`).join('')}
+              </div>
+            </div>
+            ` : ''}
+          </div>
+        </div>
+
+        ${(artistData.facebook_url || artistData.instagram_url || artistData.youtube_url || artistData.tiktok_url || artistData.pinterest_url || artistData.linkedin_url) ? `
+        <div class="profile-card">
+          <h2>Социални мрежи</h2>
+          <div class="social-links">
+            ${artistData.facebook_url ? `<a href="${artistData.facebook_url}" target="_blank" class="social-link">📘 Facebook</a>` : ''}
+            ${artistData.instagram_url ? `<a href="${artistData.instagram_url}" target="_blank" class="social-link">📷 Instagram</a>` : ''}
+            ${artistData.youtube_url ? `<a href="${artistData.youtube_url}" target="_blank" class="social-link">🎥 YouTube</a>` : ''}
+            ${artistData.tiktok_url ? `<a href="${artistData.tiktok_url}" target="_blank" class="social-link">🎵 TikTok</a>` : ''}
+            ${artistData.pinterest_url ? `<a href="${artistData.pinterest_url}" target="_blank" class="social-link">📌 Pinterest</a>` : ''}
+            ${artistData.linkedin_url ? `<a href="${artistData.linkedin_url}" target="_blank" class="social-link">💼 LinkedIn</a>` : ''}
+          </div>
+        </div>
+        ` : ''}
+      `;
+
+      document.getElementById('profile-content').innerHTML = profileHTML;
+    }
+
+    function getInitials(name) {
+      if (!name) return '?';
+      const parts = name.split(' ');
+      if (parts.length >= 2) {
+        return (parts[0][0] + parts[1][0]).toUpperCase();
+      }
+      return name.substring(0, 2).toUpperCase();
+    }
+
+    // Load profile on page load
+    loadProfile();
+  </script>
+</body>
+</html>
