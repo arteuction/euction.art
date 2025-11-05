@@ -244,7 +244,7 @@
 
   <!-- JavaScript Modules -->
   <script type="module">
-    import { requireArtist, getCurrentUser, isArtist } from './js/auth.js';
+    import { requireAuth, getCurrentUser, isArtist } from './js/auth.js';
     import { showNotification } from './js/utils.js';
     import { initNavigation } from './js/navigation.js';
     import { config } from './js/config.js';
@@ -252,10 +252,10 @@
     // Initialize navigation
     initNavigation();
 
-    // Check if user is an approved artist
-    await requireArtist();
+    // Check if user is authenticated
+    await requireAuth();
 
-    // Load artist profile
+    // Load user profile
     async function loadProfile() {
       try {
         const user = await getCurrentUser();
@@ -263,28 +263,36 @@
           throw new Error('User not found');
         }
 
-        // Initialize Supabase
-        if (!window.supabase) {
-          const script = document.createElement('script');
-          script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
-          document.head.appendChild(script);
-          await new Promise((resolve) => { script.onload = resolve; });
+        // Check if user is an artist
+        const isUserArtist = await isArtist();
+
+        if (isUserArtist) {
+          // Initialize Supabase
+          if (!window.supabase) {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+            document.head.appendChild(script);
+            await new Promise((resolve) => { script.onload = resolve; });
+          }
+
+          const supabase = window.supabase.createClient(config.supabase.url, config.supabase.anonKey);
+
+          // Fetch artist data from database
+          const { data, error } = await supabase
+            .from('Artists')
+            .select('*')
+            .eq('email', user.email)
+            .eq('status', 'approved')
+            .single();
+
+          if (error) throw error;
+
+          // Display artist profile
+          displayArtistProfile(user, data);
+        } else {
+          // Display regular user profile
+          displayUserProfile(user);
         }
-
-        const supabase = window.supabase.createClient(config.supabase.url, config.supabase.anonKey);
-
-        // Fetch artist data from database
-        const { data, error } = await supabase
-          .from('Artists')
-          .select('*')
-          .eq('email', user.email)
-          .eq('status', 'approved')
-          .single();
-
-        if (error) throw error;
-
-        // Display profile
-        displayProfile(user, data);
 
       } catch (error) {
         console.error('Error loading profile:', error);
@@ -298,7 +306,48 @@
       }
     }
 
-    function displayProfile(user, artistData) {
+    function displayUserProfile(user) {
+      const initials = getInitials(user.user_metadata?.full_name || user.email);
+      const displayName = user.user_metadata?.full_name || 'Потребител';
+
+      const profileHTML = `
+        <div class="profile-header">
+          <div class="profile-avatar">${initials}</div>
+          <h1 class="profile-name">${displayName}</h1>
+          <p class="profile-email">${user.email}</p>
+        </div>
+
+        <div class="profile-card">
+          <h2>Информация за акаунта</h2>
+          <div class="profile-info">
+            <div class="info-item">
+              <span class="info-label">Име</span>
+              <p class="info-value">${displayName}</p>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label">Имейл</span>
+              <p class="info-value">${user.email}</p>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label">Тип акаунт</span>
+              <p class="info-value">Стандартен потребител</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <h2>Желаете да станете художник?</h2>
+          <p style="margin-bottom: 1rem; color: #666;">Кандидатствайте, за да станете одобрен художник и да можете да качвате свои творби.</p>
+          <a href="artist-signup.html" class="btn btn-primary">Кандидатствай като художник</a>
+        </div>
+      `;
+
+      document.getElementById('profile-content').innerHTML = profileHTML;
+    }
+
+    function displayArtistProfile(user, artistData) {
       const initials = getInitials(artistData.name || user.email);
 
       const profileHTML = `
