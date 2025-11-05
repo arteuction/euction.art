@@ -178,6 +178,37 @@ export async function isAuthenticated() {
 }
 
 /**
+ * Check if current user is an approved artist
+ */
+export async function isArtist() {
+  try {
+    const user = await getCurrentUser();
+    if (!user) return false;
+
+    const client = await initSupabase();
+    if (!client) return false;
+
+    // Check if user's email exists in Artists table with approved status
+    const { data, error } = await client
+      .from('Artists')
+      .select('status')
+      .eq('email', user.email)
+      .eq('status', 'approved')
+      .single();
+
+    if (error) {
+      // User might not be an artist yet
+      return false;
+    }
+
+    return !!data;
+  } catch (error) {
+    console.error('Error checking artist status:', error);
+    return false;
+  }
+}
+
+/**
  * Send password reset email
  */
 export async function resetPassword(email) {
@@ -271,9 +302,6 @@ function updateNavigationUI(user) {
           <a href="profile.html" class="dropdown-item">
             <span>👤</span> Профил
           </a>
-          <a href="my-bids.html" class="dropdown-item">
-            <span>🎨</span> Моите оферти
-          </a>
           <a href="settings.html" class="dropdown-item">
             <span>⚙️</span> Настройки
           </a>
@@ -351,6 +379,25 @@ export async function requireAuth() {
   if (!authenticated) {
     const currentPath = window.location.pathname;
     window.location.href = `login.html?redirect=${encodeURIComponent(currentPath)}`;
+  }
+}
+
+/**
+ * Redirect if not an approved artist
+ */
+export async function requireArtist() {
+  const authenticated = await isAuthenticated();
+
+  if (!authenticated) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  const artist = await isArtist();
+
+  if (!artist) {
+    window.location.href = 'index.html';
+    return;
   }
 }
 
